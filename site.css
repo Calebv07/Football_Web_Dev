@@ -1,0 +1,18 @@
+
+
+.quickView {
+  display: none;
+  background-color: #FF4C4C;
+  position: fixed;
+  height: 4%;
+  width: 65%;
+  text-align: center;
+  padding: 17px 0;
+  margin: auto;
+  margin-bottom: .4em;
+  top: 1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color:white;
+}
