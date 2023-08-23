@@ -1,5 +1,4 @@
 
-
 .quickView {
   display: none;
   background-color: #FF4C4C;
@@ -15,4 +14,71 @@
   right: 0;
   left: 0;
   color:white;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+.background {
+  Display: flex;
+  position: relative;
+}
+.background .filter {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  position: position;
+  opacity: .5;
+  background:
+  linear-gradient( #1A1A1A, transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+.background .dot1 {
+  height: 800px;
+  width: 800px;
+  filter: blur(500px);
+  background-color: #A81307;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  bottom: -40%;
+  right: -20%;
+}
+.background .dot2 {
+  height: 1200px;
+  width: 1200px;
+  filter: blur(500px);
+  background-color: #A81307;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  top: -110%;
+  left:-40%;
+}
+.background .dot3 {
+  height: 700px;
+  width: 700px;
+  filter: blur(500px);
+  background-color: #A81307;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  bottom: -60%;
+  left:-5%;
+}
+.background .dot4 {
+  height: 900px;
+  width: 900px;
+  filter: blur(100px);
+  background-color: #A81307;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  top: -50%;
+  right:-40%;
 }
