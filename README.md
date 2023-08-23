@@ -1,2 +1,3 @@
-# Football_Web_Dev
-The repository for the Jefferson Chickens Football Website
+# Important Links
+
+https://getbootstrap.com/docs/5.3/layout/grid/
