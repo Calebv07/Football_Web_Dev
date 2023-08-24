@@ -39,7 +39,7 @@ main {
 .quickEdit {
   background-color: rgba(180, 180, 170, .5);
   padding: 1% 2%;
-  margin: 3%;
+  margin-top: 2%;
   border-radius: 10px;
 }
 .quickEdit input option {
@@ -47,7 +47,6 @@ main {
 }
 .field {
   background-color: rgba(180, 180, 170, .5);
-  padding: 2% 2%;
   margin: 3%;
   border-radius: 10px;
 }
