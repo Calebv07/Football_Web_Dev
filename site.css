@@ -1,50 +1,57 @@
 .quickView {
-  display: none;
   background-color: #FF4C4C;
   position: fixed;
-  height: 4%;
+  height: 50px;
   width: 65%;
   text-align: center;
-  padding: 17px 0;
+  padding: 17px 10px;
   margin: auto;
   margin-bottom: .4em;
-  top: 1;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   color:white;
+  vertical-align:middle;
 }
 
 body {
-  background-color: black;
+  background-color: #2F2F37;
   margin: 0;
   padding: 0;
+  padding-top: 100px;
+  color: white;
+}
+main {
+  order: 1;
 }
 .background {
-  Display: flex;
-  position: relative;
+  display: flex;
+  position: absolute;
+}
+.background .dots{
+  
+  background-color: #A81307;
+  border-radius: 50%;
 }
 .background .filter {
+  position: relative;
   padding: 0;
   margin: 0;
   top: 0;
   bottom: 0;
   height: 100vh;
   width: 100vw;
-  position: position;
   opacity: .5;
   background:
   linear-gradient( #1A1A1A, transparent),
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
 .background .dot1 {
+  position: relative;
   height: 800px;
   width: 800px;
   filter: blur(500px);
-  background-color: #A81307;
-  border-radius: 50%;
-  display: inline-block;
-  position: fixed;
   bottom: -40%;
   right: -20%;
 }
@@ -52,10 +59,6 @@ body {
   height: 1200px;
   width: 1200px;
   filter: blur(500px);
-  background-color: #A81307;
-  border-radius: 50%;
-  display: inline-block;
-  position: fixed;
   top: -110%;
   left:-40%;
 }
@@ -63,10 +66,6 @@ body {
   height: 700px;
   width: 700px;
   filter: blur(500px);
-  background-color: #A81307;
-  border-radius: 50%;
-  display: inline-block;
-  position: fixed;
   bottom: -60%;
   left:-5%;
 }
@@ -74,10 +73,6 @@ body {
   height: 900px;
   width: 900px;
   filter: blur(100px);
-  background-color: #A81307;
-  border-radius: 50%;
-  display: inline-block;
-  position: fixed;
   top: -50%;
   right:-40%;
 }
