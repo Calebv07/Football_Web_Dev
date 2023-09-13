@@ -15,7 +15,7 @@ if($conn) {
     die("Connection Broken: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO play (firstName, lastName, email)
+$sql = "INSERT INTO identity (firstName, lastName, email)
 VALUES ($firstName, $lastName, $email)";
 
 if (mysqli_query($conn, $sql)) {
