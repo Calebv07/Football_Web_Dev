@@ -3,7 +3,7 @@ $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
 $email = $_POST["email"];
 
-$dbserver = "locahost";
+$dbserver = "localhost";
 $dbuser = "root";
 $dbpass = "DynoMonitorFoodPan374$&%";
 $dbname = "practiceForm";

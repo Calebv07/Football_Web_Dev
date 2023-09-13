@@ -1,0 +1,102 @@
+.quickView {
+  background-color: #FF4C4C;
+  position: fixed;
+  height: 50px;
+  width: 65%;
+  text-align: center;
+  padding: 17px 10px;
+  margin: auto;
+  margin-bottom: .4em;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color:white;
+  vertical-align:middle;
+}
+body {
+  background-color: black;
+}
+
+body .background{
+  position: relative;
+  padding: 0;
+  padding-top: 50px;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background:
+  linear-gradient( #1A1A1A, transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+main {
+  order: 1;
+  color: #FBF7F1;
+}
+
+.quickEdit {
+  background-color: rgba(180, 180, 170, .5);
+  padding: 1% 2%;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+.quickEdit input option {
+    width:50px;
+}
+.field {
+  background-color: rgba(180, 180, 170, .5);
+  margin: 3%;
+  border-radius: 10px;
+}
+.player {
+  background-color: rgba(180, 180, 170, .5);
+  padding: 3% 2%;
+  margin: 3%;
+  border-radius: 10px;
+}
+.fieldDataSelection {
+  background-color: rgba(180, 180, 170, .5);
+  padding: 2% 2%;
+  margin: 3%;
+  border-radius: 10px;
+}
+
+.background .dot1 {
+  position: relative;
+  height: 800px;
+  width: 800px;
+  filter: blur(500px);
+  background-color: #A81307;
+  opacity: .3;
+  bottom: -40%;
+  right: -20%;
+}
+.background .dot2 {
+  height: 1200px;
+  width: 1200px;
+  filter: blur(500px);
+  background-color: #A81307;
+  opacity: .3;
+  top: -110%;
+  left:-40%;
+}
+.background .dot3 {
+  height: 700px;
+  width: 700px;
+  filter: blur(500px);
+  background-color: #A81307;
+  opacity: .3;
+  bottom: -60%;
+  left:-5%;
+}
+.background .dot4 {
+  height: 900px;
+  width: 900px;
+  filter: blur(100px);
+  background-color: #A81307;
+  opacity: .3;
+  top: -50%;
+  right:-40%;
+}
