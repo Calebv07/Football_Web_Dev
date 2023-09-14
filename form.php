@@ -16,13 +16,14 @@ if($conn) {
 }
 
 $sql = "INSERT INTO identity (firstName, lastName, email)
-VALUES ($firstName, $lastName, $email)";
+VALUES ('$firstName', '$lastName', '$email')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New Record Created";
+    echo "<br> New Record Created";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
 
+header("Location: form.html")
 ?>
