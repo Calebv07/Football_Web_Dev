@@ -15,25 +15,29 @@
   vertical-align:middle;
 }
 body {
+  overflow-x: hidden;
   background-color: black;
 }
 
 body .background{
-  position: relative;
+  z-index: -1;
+  position: absolute;
   padding: 0;
-  padding-top: 50px;
   margin: 0;
   top: 0;
   bottom: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background:
   linear-gradient( #1A1A1A, transparent),
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
+header {
+  margin-top: 50px;
+}
 main {
-  order: 1;
   color: #FBF7F1;
+  z-index: 1;
 }
 
 .quickEdit {
@@ -64,39 +68,42 @@ main {
 }
 
 .background .dot1 {
-  position: relative;
+  position: absolute;
   height: 800px;
   width: 800px;
   filter: blur(500px);
   background-color: #A81307;
-  opacity: .3;
+  opacity: .5;
   bottom: -40%;
   right: -20%;
 }
 .background .dot2 {
+  position: absolute;
   height: 1200px;
   width: 1200px;
   filter: blur(500px);
   background-color: #A81307;
-  opacity: .3;
+  opacity: .5;
   top: -110%;
   left:-40%;
 }
 .background .dot3 {
+  position: absolute;
   height: 700px;
   width: 700px;
   filter: blur(500px);
   background-color: #A81307;
-  opacity: .3;
+  opacity: .5;
   bottom: -60%;
   left:-5%;
 }
 .background .dot4 {
+  position: absolute;
   height: 900px;
   width: 900px;
   filter: blur(100px);
   background-color: #A81307;
-  opacity: .3;
+  opacity: .5;
   top: -50%;
   right:-40%;
 }
