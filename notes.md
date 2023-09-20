@@ -110,3 +110,77 @@ if(mysqli_num_rows($request)>0) {
 mysqli_close();
 
 ```
+
+## PHP Review
+Reviewing PHP
+### Opening Tag
+All PHP files start with this opening tag.
+```php
+<?php
+```
+### Connection Variables
+DO NOT USE IN PRODUCTION ENVIRONMENT.
+
+These are used for creating a connection object. Essentially the connection variables for connecting to the database.
+```php
+$servername = 'localhost';
+$username = 'username';
+$password = 'password';
+$dbname = 'myDatabase';
+```
+
+### Create the Connection
+This connection object holds
+* Server Address - The address of the Server
+* Authorization - Username/Password
+* Database Name - The name of the database
+```php
+$conn = mysqli_connet($servername, $username, $password, $dbname);
+```
+### Testing the connection
+You are going to check the connection in a production environment.
+* DO NOT echo the error in production environment
+```php
+if(!$conn) {
+    die ("Connection Failed: " . mysqli_connect_error());
+    // DO NOT ECHO IN PRODUCTION ENVIRONMENT
+}
+```
+
+### SQL Updating
+Use the update to update values in the table.
+
+Keywords:
+* UPDATE - Changes a value in the table
+* SET - Assign a field the value
+* WHERE - Set to ONLY a specific set of data
+
+**Using an "update" WITHOUT "WHERE" clause will affect ALL data in the table to the "SET" variable**
+```php
+$sql = "UPDATE myTableName SET lastName='Hill' WHERE firstName = 'Liz'";
+```
+
+### Deleting Data (Crude Operations)
+Use the DELETE to delete values in the table
+
+Keywords:
+* DELETE - Delete a value in the table
+* FROM - Select from a table
+* WHERE - Set to ONLY a specific set of data
+```php
+$sql = "DELETE FROM myTableName WHERE id=17";
+```
+
+### Submit the query request
+If the mysqli query fails, this if statement will be able to catch the error so the program doesn't crash.
+* IF query works: Echo "Record Updated"
+* ELSE: Echo "Error: " and the error
+
+DO NOT echo the error in production environment.
+```php
+if (mysqli_query($conn, $sql)) {
+    echo "Record Updated";
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
+```
