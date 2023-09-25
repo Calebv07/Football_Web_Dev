@@ -8,7 +8,7 @@ $date = $_POST["date"];
 // Quick Edit Bar
 $result = $_POST["result"];
 $gainLoss = $_POST["gainLoss"];
-$okd = $_POST["ODK"];
+$odk = $_POST["odk"];
 $yardLine = $_POST["yardLine"];
 $down = $_POST["down"];
 $distance = $_POST["distance"];
@@ -56,15 +56,15 @@ $queryFieldData = "INSERT INTO fieldData (gameID, playType, hash, directPlay, ba
 VALUES ('1', '$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength')";
 
 $queryGameData = "INSERT INTO gameData (gameID, result, gainLoss, ODK, yardLine, down, distance)
-VALUES ('1', '$result' , '$gainLoss', '$okd', '$yardLine', '$down' '$distance')";
+VALUES ('1', '$result', '$gainLoss', '$odk', '$yardLine', '$down', '$distance')";
 
 $queryGameInfo = "INSERT INTO gameInfo (gameID, oppName, homeName, date)
 VALUES ('1', '$oppName','$homeName','$date')";
 
-if (mysqli_query($conn, $queryPlay)) {
+if (mysqli_multi_query($conn, $queryPlay, $queryFieldData, $queryGameData, $queryGameInfo)) {
     echo "<br> New Record Created";
 } else {
-    echo "Error: " . $queryPlay . "<br>" . mysqli_error($conn);
+    echo "Error: " . $queryGameInfo . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);

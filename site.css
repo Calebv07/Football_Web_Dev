@@ -68,6 +68,7 @@ main {
 }
 
 .background .dot1 {
+  display: none;
   position: absolute;
   height: 800px;
   width: 800px;
@@ -78,6 +79,7 @@ main {
   right: -20%;
 }
 .background .dot2 {
+  display: none;
   position: absolute;
   height: 1200px;
   width: 1200px;
