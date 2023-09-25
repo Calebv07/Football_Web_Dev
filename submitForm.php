@@ -67,6 +67,6 @@ if (mysqli_query($conn, $queryPlay)) {
     echo "Error: " . $queryPlay . "<br>" . mysqli_error($conn);
 }
 
-mysqli.close($conn);
+mysqli_close($conn);
 
 ?>
