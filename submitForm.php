@@ -17,7 +17,7 @@ $distance = $_POST["distance"];
 $returner = $_POST["returner"];
 $rusher = $_POST["rusher"];
 $passer = $_POST["passer"];
-$reciever = $_POST ["reciever"];
+$receiver = $_POST ["receiver"];
 $tacklerOne = $_POST ["tacklerOne"];
 $tacklerTwo = $_POST ["tacklerTwo"];
 
@@ -49,8 +49,8 @@ if(!$conn) {
   die("Error connecting to database: \n" . mysqli_connect_error());
 }
 
-$queryPlay = "INSERT INTO play (gameID, passer, reciever, rusher, returner, tacklerOne, tacklerTwo)
-VALUES ('1', '$passer', '$reciever', '$rusher', '$returner', '$tacklerOne', '$tacklerTwo')";
+$queryPlay = "INSERT INTO play (gameID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo)
+VALUES ('1', '$passer', '$receiver', '$rusher', '$returner', '$tacklerOne', '$tacklerTwo')";
 
 $queryFieldData = "INSERT INTO fieldData (gameID, playType, hash, directPlay, backField, oForm, oPlay, oStrength)
 VALUES ('1', '$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength')";
