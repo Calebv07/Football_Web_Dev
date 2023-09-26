@@ -64,7 +64,7 @@ VALUES ('1', '$oppName','$homeName','$date')";
 if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && mysqli_query($conn, $queryGameData) && mysqli_query($conn, $queryGameInfo)) {
     echo "<br> New Record Created";
 } else {
-    echo "Error: " . $queryGameInfo . "<br>" . mysqli_error($conn);
+    echo "Error:<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);
