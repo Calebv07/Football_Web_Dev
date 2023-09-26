@@ -61,7 +61,7 @@ VALUES ('1', '$result', '$gainLoss', '$odk', '$yardLine', '$down', '$distance')"
 $queryGameInfo = "INSERT INTO gameInfo (gameID, oppName, homeName, date)
 VALUES ('1', '$oppName','$homeName','$date')";
 
-if (mysqli_multi_query($conn, $queryPlay, $queryFieldData, $queryGameData, $queryGameInfo)) {
+if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && mysqli_query($conn, $queryGameData) && mysqli_query($conn, $queryGameInfo)) {
     echo "<br> New Record Created";
 } else {
     echo "Error: " . $queryGameInfo . "<br>" . mysqli_error($conn);
