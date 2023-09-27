@@ -25,4 +25,5 @@ $sqlplay = "SELECT * FROM gameID, playID, passer, receiver, rusher, returner, ta
 
 $sqlplayerI = "SELECT * FROM playerinfo";
 $sqlplayerI = "SELECT * FROM playID, playNumber, firstName, lastName";
+
 ?>
