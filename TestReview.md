@@ -4,6 +4,23 @@ Created by Caleb V.
 This is a complete review of the **CRUD** (Create, Read, Update, Delete) operations in sql. This should cover most of the things on the test. Please contact me if you have questions or comments.
 * Email at [cvang07@jeffcityschools.org](mailto:cvang07@jeffcityschools.org?subject=SQL%20Test%20Review%20Questions)
 
+# Table of Contents
+- [Test Review](#test-review)
+- [Table of Contents](#table-of-contents)
+  * [Connection Review](#connection-review)
+    + [Important Note](#important-note)
+  * [The HTML form & getting data](#the-html-form---getting-data)
+  * [Inserting data into the database - Create.r.u.d.](#inserting-data-into-the-database---createrud)
+    + [Important Note:](#important-note-)
+  * [Reading data in the database - c.Read.u.d](#reading-data-in-the-database---creadud)
+    + [Accepted boolean logics](#accepted-boolean-logics)
+    + [Displaying Data](#displaying-data)
+  * [Updating data in the database - c.r.Update.d.](#updating-data-in-the-database---crupdated)
+  * [Deleting data in the database - c.r.u.Delete](#deleting-data-in-the-database---crudelete)
+  * [Quering the request](#quering-the-request)
+  * [Ending Statements](#ending-statements)
+  * [Conclusion](#conclusion)
+
 ## Connection Review
 For most of our PHP files, we'll start off by trying to connect to the database
 * Always start the PHP file with the PHP Tag
@@ -272,8 +289,10 @@ ALWAYS end the php tag.
 ```
 
 ## Conclusion
-Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 multiple choice quiz you can try here.
+Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 multiple choice review you can try here.
 
 [Google Form Link](https://forms.google.com)
 
 If you have any other questions or concerns, you can contact me. Otherwise, good luck!
+
+
