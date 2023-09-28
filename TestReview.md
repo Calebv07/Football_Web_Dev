@@ -294,5 +294,3 @@ Now you should know all the basic crud operations in SQL and basic PHP syntax/op
 [Google Form Link](https://forms.gle/dxEGRpZExmooLmEu9)
 
 If you have any other questions or concerns, you can contact me. Otherwise, good luck!
-
-
