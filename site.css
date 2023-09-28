@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Rockwell;
+  src: url(/fonts/ROCK.TTF);
+}
 body {
   overflow-x: hidden;
   margin: 0;
@@ -21,7 +25,9 @@ body {
   margin-left: 3%;
   margin-right: 3%;
   background: #b4b4aa80;
+  color: white;
   border-radius: 10px;
+  font-family: "Rockwell";
 }
 .quickView {
 
@@ -39,28 +45,30 @@ main {
 .quickEdit {
 
 }
-.field {
 
+.fieldAndPlayer {
+  display: flex;
+}
+.field {
+  width: 70%;
 }
 .player {
-
+  display: grid;
+  width: 30%;
+  grid-template-columns: 50% 50%;
+}
+.playerSection {
+  justify-content: space-evenly;
+  text-align: center;
+}
+.player input {
+  width: 50%;
+  
 }
 .fieldDataSelection {
 
 }
 
-.background .dot1 {
-
-}
-.background .dot2 {
-
-}
-.background .dot3 {
-
-}
-.background .dot4 {
-
-}
 .background .dot1 {
   position: absolute;
   height: 800px;
