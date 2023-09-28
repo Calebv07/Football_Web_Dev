@@ -291,7 +291,7 @@ ALWAYS end the php tag.
 ## Conclusion
 Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 multiple choice review you can try here.
 
-[Google Form Link](https://forms.google.com)
+[Google Form Link](https://forms.gle/dxEGRpZExmooLmEu9)
 
 If you have any other questions or concerns, you can contact me. Otherwise, good luck!
 
