@@ -24,7 +24,7 @@ body {
   margin-top: 3%;
   margin-left: 3%;
   margin-right: 3%;
-  background: #b4b4aa80;
+  background: #8c8c8580;
   color: white;
   border-radius: 10px;
   font-family: "Rockwell";
@@ -50,11 +50,11 @@ main {
   display: flex;
 }
 .field {
-  width: 70%;
+  width: 60%;
 }
 .player {
   display: grid;
-  width: 30%;
+  width: 40%;
   grid-template-columns: 50% 50%;
 }
 .playerSection {
