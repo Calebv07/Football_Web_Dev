@@ -9,7 +9,7 @@
 /* Stage 1 - Initialization Stage */
 $servername = "localhost"; // <-- This is the ip address of the server (In this case on this computer)
 $username = "root"; // <-- This is the username of the user/client trying to access the DB
-$password = "DynoMonitorFoodPan374"; // <-- This is the password of the user/client
+$password = "PASSWORD"; // <-- This is the password of the user/client
 $dbname = "footballApp"; // <-- This is the name of the database we're trying to connect to
 // All these variables and their is CASE SENSITIVE
 

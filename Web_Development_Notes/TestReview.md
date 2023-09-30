@@ -1,5 +1,5 @@
 # Test Review
-Created by Caleb V.
+Created by Caleb V. | Last updated: 9/30/2023
 
 This is a complete review of the **CRUD** (Create, Read, Update, Delete) operations in sql. This should cover most of the things on the test. Please contact me if you have questions or comments.
 * Email at [cvang07@jeffcityschools.org](mailto:cvang07@jeffcityschools.org?subject=SQL%20Test%20Review%20Questions)
@@ -293,7 +293,7 @@ ALWAYS end the php tag.
 ```
 
 # Conclusion
-Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 multiple choice review you can try here.
+Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 question review you can try here.
 
 [Google Form Link](https://forms.gle/dxEGRpZExmooLmEu9)
 

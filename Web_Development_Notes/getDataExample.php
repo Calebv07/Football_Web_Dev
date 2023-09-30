@@ -1,7 +1,7 @@
 <?php
 $dbserver = "localhost";
 $dbuser = "root";
-$dbpass = "DynoMonitorFoodPan374$&%";
+$dbpass = "PASSWORD";
 $dbname = "practiceForm";
 
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
