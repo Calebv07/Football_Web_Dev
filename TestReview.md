@@ -7,6 +7,7 @@ This is a complete review of the **CRUD** (Create, Read, Update, Delete) operati
 # Table of Contents
 - [Test Review](#test-review)
 - [Table of Contents](#table-of-contents)
+- [Review](#review)
   * [Connection Review](#connection-review)
     + [Important Note](#important-note)
   * [The HTML form & getting data](#the-html-form---getting-data)
@@ -19,8 +20,9 @@ This is a complete review of the **CRUD** (Create, Read, Update, Delete) operati
   * [Deleting data in the database - c.r.u.Delete](#deleting-data-in-the-database---crudelete)
   * [Quering the request](#quering-the-request)
   * [Ending Statements](#ending-statements)
-  * [Conclusion](#conclusion)
+- [Conclusion](#conclusion)
 
+# Review
 ## Connection Review
 For most of our PHP files, we'll start off by trying to connect to the database
 * Always start the PHP file with the PHP Tag
@@ -78,7 +80,7 @@ In a production environment, we always want to use the POST method. All our inpu
 ```
 The POST-ARRAY is an associative array, meaning there is a key-value pair.
 * i.e. the key would be the what the input name is and the value is the users input value.
-* The `firstName` key (or name) would corrospond with the value (or users input) like `Wayne`.
+* The `firstName` key (or name) would correspond with the value (or users input) like `Wayne`.
 * Note that this is a superglobal variable, meaning they are always accessible inside this file regardless of scope (predefined access control).
 
 To access the POST-ARRAY within php, use the name that was set for the input.
@@ -114,7 +116,7 @@ $sql = "INSERT INTO ";
 ```
 Then define the fields we want to insert into.
 - Fields are the columns of the table
-- Auto-incrementing fields do NOT have to be specified.
+- **Auto-incrementing fields do NOT have to be specified.**
 - Enter the field names that you want to change (case-sensitive)
 ```php
 $sql = "INSERT INTO tableName (fieldName1, fieldName2, fieldName3))";
@@ -124,6 +126,8 @@ Then enter in the values we want to insert those values to.
 - Values are in the order that you define the fields
   - i.e field1, field2, field3 corresponds with value1, value2, value3 **or** (field1, field2) VALUES ('value1', 'value2')
   - **If a value is not assigned to a field, it will throw an error**
+  - **Auto-incrementing fields do NOT have to be specified.**
+  - So you do not have to define the field name and value of an auto-incremented field. Just leave it out of the SQL statement.
 - You can set values to variables
   - Always make sure to encase all values with single qoutes ''
   - i.e '$myVariable', '123'
@@ -232,7 +236,7 @@ Next, we'll update existing values in database.
 ```php
 $sql = "UPDATE myTableName SET lastName='Hill' WHERE firstName = 'Liz'";
 ```
-Remember that variables can be used for the values here. Always encase your vlues with single qoutes: 'exampleValue'.
+Remember that variables can be used for the values here. Always encase your values with single qoutes: 'exampleValue'.
 
 ## Deleting data in the database - c.r.u.Delete
 Lastly, we'll DELETE existing values in the database.
@@ -243,7 +247,7 @@ Keywords:
 ```php
 $sql = "DELETE FROM myTableName WHERE fieldName='value'";
 ```
-Remember that variables can be used for the values here. Always encase your vlues with single qoutes: 'exampleValue'.
+Remember that variables can be used for the values here. Always encase your values with single qoutes: 'exampleValue'.
 
 Best Practices:
 - ALWAYS use WHERE clause for deleting data.
@@ -288,7 +292,7 @@ ALWAYS end the php tag.
 ?>
 ```
 
-## Conclusion
+# Conclusion
 Now you should know all the basic crud operations in SQL and basic PHP syntax/operations. If you want to test your knowledge, i've created a quick 10 multiple choice review you can try here.
 
 [Google Form Link](https://forms.gle/dxEGRpZExmooLmEu9)

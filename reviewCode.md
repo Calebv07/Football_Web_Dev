@@ -8,7 +8,7 @@ WHERE firstName = 'Alice'";
 $requestOne = mysqli_query($conn, $sqlStateOne);
 $requestTwo = mysqli_query($conn, $sqlStateTwo);
 
-if ($requestOne && $requestTwo && $requestThree) {
+if ($requestOne && $requestTwo) {
     echo "Record Updated";
 } else {
     echo "Error: " . mysqli_error($conn);
@@ -19,7 +19,7 @@ if ($requestOne && $requestTwo && $requestThree) {
 
 $sql = "SELECT firstName, lastName, email, age
 FROM profileInfo
-WHERE age BETWEEN 18 AND 25;
+WHERE age BETWEEN 18 AND 25";
 
 ```
 ```php
@@ -53,7 +53,8 @@ if ($result) {
 
 $employeeName = "John Doe";
 $employeeID = 123;
-$insert_query = "INSERT INTO employees (name, id) VALUES ('$employeeName', $employeeID)";
+$insert_query = "INSERT INTO employees (name, id)
+VALUES ('$employeeName', $employeeID)";
 mysqli_query($conn, $insert_query);
 
 
