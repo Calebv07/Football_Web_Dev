@@ -9,7 +9,7 @@ TODO:
 $dbserver = "localhost";
 $dbuser = "root";
 $dbpass = "DynoMonitorFoodPan374$&%";
-$dbname = "practiceForm";
+$dbname = "footballApp";
 
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -34,8 +34,10 @@ $sqlplay = "SELECT * FROM gameID, playID, passer, receiver, rusher, returner, ta
 $sqlplayerI = "SELECT * FROM playerinfo";
 $sqlplayerI = "SELECT * FROM playID, playNumber, firstName, lastName";
 
+$result = mysqli_query($conn, $sqlfieldD);
+$result2 = mysqli_query($conn, $sqlgameD);
 
-if(mysqli_num_rows($request)>0) {
+if(mysqli_num_rows($result)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -65,9 +67,9 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
-mysqli_close();
 
-if(mysqli_num_rows($request)>0) {
+
+if(mysqli_num_rows($result2)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -95,7 +97,7 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
-mysqli_close();
+
 
 if(mysqli_num_rows($request)>0) {
     echo "<table>
@@ -119,7 +121,7 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
-mysqli_close();
+
 
 if(mysqli_num_rows($request)>0) {
     echo "<table>
@@ -149,7 +151,7 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
-mysqli_close();
+
 
 if(mysqli_num_rows($request)>0) {
     echo "<table>
@@ -172,15 +174,8 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
+
+
 mysqli_close();
   
-  
-  
-  
- $result = mysqli_query($conn, $sql); 
-  
-  
-  
-  
-  
- 
+?>
