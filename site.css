@@ -2,6 +2,10 @@
   font-family: Rockwell;
   src: url(/fonts/ROCK.TTF);
 }
+::placeholder {
+  text-align: center; 
+}
+
 body {
   overflow-x: hidden;
   margin: 0;
@@ -60,18 +64,25 @@ main {
   align-items: center;
   width: 400px;
   flex-grow: 2;
+  margin-right: 1.5%;
 }
 .player {
   font-size: 1em;
   flex-shrink: 1;
+  margin-left: 1.5%;
 }
 .playerSection {
+  width: 100%;
   text-align: center;
   display: grid;
   grid-template-columns: 50% 50%;
+  padding-bottom: 8%;
 }
 .player input {
-  width: 80%;
+  width: 20%;
+  height: 40%;
+  border-radius: 10px;
+  font-size: 2em;
 }
 .fieldDataSelection {
   font-size: 1.5em;
@@ -79,6 +90,8 @@ main {
   justify-content:  space-evenly;
   flex-flow: wrap;
 }
+
+
 
 .background .dot1 {
   position: absolute;
