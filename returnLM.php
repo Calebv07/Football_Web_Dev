@@ -34,10 +34,8 @@ $sqlplay = "SELECT * FROM gameID, playID, passer, receiver, rusher, returner, ta
 $sqlplayerI = "SELECT * FROM playerinfo";
 $sqlplayerI = "SELECT * FROM playID, playNumber, firstName, lastName";
 
-$result = mysqli_query($conn, $sqlfieldD);
-$result2 = mysqli_query($conn, $sqlgameD);
 
-if(mysqli_num_rows($result)>0) {
+if(mysqli_num_rows($result = mysqli_query($conn, $sqlfieldD)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -69,7 +67,7 @@ if(mysqli_num_rows($result)>0) {
 }
 
 
-if(mysqli_num_rows($result2)>0) {
+if(mysqli_num_rows($result2 = mysqli_query($conn, $sqlgameD)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -81,7 +79,7 @@ if(mysqli_num_rows($result2)>0) {
                 <th>down</th>
                 <th>distance</th>
             <tr>";
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result2)) {
         echo "<tr>
                 <td>" . $row['gameID'] . "</td>
                 <td>" . $row['playID'] . "</td>
@@ -99,7 +97,7 @@ if(mysqli_num_rows($result2)>0) {
 }
 
 
-if(mysqli_num_rows($request)>0) {
+if(mysqli_num_rows($request3 = mysqli_query($conn, $sqlgameI)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -108,7 +106,7 @@ if(mysqli_num_rows($request)>0) {
                 <th>homeName</th>
                 <th>date</th>
             <tr>";
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result3)) {
         echo "<tr>
                 <td>" . $row['gameID'] . "</td>
                 <td>" . $row['playID'] . "</td>
@@ -123,7 +121,7 @@ if(mysqli_num_rows($request)>0) {
 }
 
 
-if(mysqli_num_rows($request)>0) {
+if(mysqli_num_rows($request4 = mysqli_query($conn, $sqlplay)>0) {
     echo "<table>
             <tr>
                 <th>gameID</th>
@@ -135,7 +133,7 @@ if(mysqli_num_rows($request)>0) {
                 <th>tacklerOne</th>
                 <th>tacklerTwo</th>
             <tr>";
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result4)) {
         echo "<tr>
                 <td>" . $row['gameID'] . "</td>
                 <td>" . $row['playID'] . "</td>
@@ -153,7 +151,7 @@ if(mysqli_num_rows($request)>0) {
 }
 
 
-if(mysqli_num_rows($request)>0) {
+if(mysqli_num_rows($request5 = mysqli_query($conn, $sqlplayerI)>0)) {
     echo "<table>
             <tr>
                 <th>play</th>
@@ -161,7 +159,7 @@ if(mysqli_num_rows($request)>0) {
                 <th>firstName</th>
                 <th>lastName</th>
             <tr>";
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result5)) {
         echo "<tr>
                 <td>" . $row['play'] . "</td>
                 <td>" . $row['playNumber'] . "</td>
@@ -174,7 +172,7 @@ if(mysqli_num_rows($request)>0) {
 } else {
     die;
 }
-
+;
 
 mysqli_close();
   
