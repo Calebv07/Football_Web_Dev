@@ -280,9 +280,9 @@ Methods:
 * **mysqli_error()** - This will output the error when using the connection object. Requires the connection object as a parameter.
 
 ## Ending Statements
-ALWAYS close the mysqli connection to ensure your queries are executed properly.
+ALWAYS close the mysqli connection to ensure your queries are executed properly. Make sure to pass your connection variable within the parameters.
 ```php
-mysqli_close();
+mysqli_close($conn);
 ```
 Methods:
 * **mysqli_query()** - This will close the mysqli connection.
