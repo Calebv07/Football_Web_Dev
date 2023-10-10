@@ -8,16 +8,16 @@ $date = $_POST["date"];
 // Quick Edit Bar
 $result = $_POST["result"];
 $gainLoss = $_POST["gainLoss"];
-$okd = $_POST["ODK"];
+$odk = $_POST["odk"];
 $yardLine = $_POST["yardLine"];
 $down = $_POST["down"];
 $distance = $_POST["distance"];
 
 // Player Section
-$return = $_POST["returner"];
+$returner = $_POST["returner"];
 $rusher = $_POST["rusher"];
-$passer =  = $_POST["passer"];
-$reciever = $_POST ["reciever"];
+$passer = $_POST["passer"];
+$receiver = $_POST ["receiver"];
 $tacklerOne = $_POST ["tacklerOne"];
 $tacklerTwo = $_POST ["tacklerTwo"];
 
@@ -42,31 +42,31 @@ $dbpass = 'DynoMonitorFoodPan374$&%';
 $dbname = 'footballApp';
 
 // Connection object, statement that connects to the database
-$conn = mysql_connection($dbserver, $dbuser, $dbpass, $dbname); 
+$conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname); 
 
 // Checking connection, if unable to then kill process.
 if(!$conn) {
   die("Error connecting to database: \n" . mysqli_connect_error());
 }
 
-$queryPlay = "INSERT INTO play (passer, reciever, rusher, returner, tacklerOne, tacklerTwo)
-VALUES ('$passer', '$reciever', '$rusher', '$returner', '$tackler1', '$tackler2')";
+$queryPlay = "INSERT INTO play (gameID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo)
+VALUES ('1', '$passer', '$receiver', '$rusher', '$returner', '$tacklerOne', '$tacklerTwo')";
 
-$queryFieldData = "INSERT INTO fieldData (playType, hash, directPlay, backField, oForm, oPlay, oStrength)
-VALUES ('$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength')";
+$queryFieldData = "INSERT INTO fieldData (gameID, playType, hash, directPlay, backField, oForm, oPlay, oStrength)
+VALUES ('1', '$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength')";
 
-$queryGameData = "INSERT INTO gameData (result, gainLoss, ODK, yardLine, down, distance)
-VALUES ('$result' , '$gainLoss', '$okd', '$yardLine', '$down' '$distance')";
+$queryGameData = "INSERT INTO gameData (gameID, result, gainLoss, ODK, yardLine, down, distance)
+VALUES ('1', '$result', '$gainLoss', '$odk', '$yardLine', '$down', '$distance')";
 
-$queryGameInfo = "INSERT INTO gameInfo (oppName, homeName, date)
-VALUES ('$oppName','$homeName','$date')";
+$queryGameInfo = "INSERT INTO gameInfo (gameID, oppName, homeName, date)
+VALUES ('1', '$oppName','$homeName','$date')";
 
-if (mysqli_query($conn, $queryPlay)) {
+if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && mysqli_query($conn, $queryGameData) && mysqli_query($conn, $queryGameInfo)) {
     echo "<br> New Record Created";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error:<br>" . mysqli_error($conn);
 }
 
-mysqli.close($conn);
+mysqli_close($conn);
 
 ?>

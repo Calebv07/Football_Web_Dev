@@ -43,13 +43,13 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a href="index.html"><img alt="Home" src="navIcon/homeIcon.svg" height=75px></a>
+                <a href="index.html"><img alt="Home" src="assets/navIcon/homeIcon.svg" height=75px></a>
               </li>
               <li class="nav-item">
-                <a href="record.html"><img alt="Record" src="navIcon/recordIcon.svg" height=75px></a>
+                <a href="record.html"><img alt="Record" src="assets/navIcon/recordIcon.svg" height=75px></a>
               </li>
               <li class="nav-item">
-                <a href="export.html"><img alt="Export" src="navIcon/exportIcon.svg" height=75px></a>
+                <a href="export.html"><img alt="Export" src="assets/navIcon/exportIcon.svg" height=75px></a>
               </li>
             </ul>
           </div>
@@ -63,10 +63,10 @@
             <input name="oppName" type="text" placeholder="Enter Oppenent Name">
           </div>
           <div class="col">
-            <input name="homeName" <input type="text" placeholder="Home">
+            <input name="homeName" type="text" placeholder="Home">
           </div>
           <div class="col">
-            <input type=date>
+            <input name="date" type="date">
           </div>
           <div class="col">
             <input type="submit">
@@ -78,13 +78,13 @@
         <div class="row">
           <input name="result" type="text" placeholder="Result" class="col">
           <input name="gainLoss" type="text" placeholder="Gain / Loss" class="col">
-          <select name="okd"placeholder="ODK" class="col">
+          <select name="odk" placeholder="ODK" class="col">
             <option value="O">Offensive</option>
             <option value="D">Defensive</option>
             <option value="K">Kicking</option>
           </select>
           <input name="yardLine" type="number" placeholder="Yard Line" class="col">
-          <select placeholder="Down" class="col">
+          <select name="down" placeholder="Down" class="col">
             <option value="1">First</option>
             <option value="2">Second</option>
             <option value="3">Third</option>
@@ -97,7 +97,7 @@
         <div class="row">
           <div class="col align-self-center">
             <section class="field">
-              <img alt="Football Field" src="images/footballField.svg" width=30% style="transform: rotate(90deg);" />
+              <img alt="Football Field" src="assets/images/footballField.svg" width=30% style="transform: rotate(90deg);" />
             </section>
           </div>
           <div class="col-5 align-self-center">
@@ -120,18 +120,18 @@
                       <input name="passer" type="number" placeholder="00">
                     </div>
                     <div class="col">
-                      <h2>Reciever</h2>
-                      <input name="reciever" type="number" placeholder="00">
+                      <h2>Receiver</h2>
+                      <input name="receiver" type="number" placeholder="00">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col">
                       <h2>Tackler 1</h2>
-                      <input name="tackler1" type="number" placeholder="00">
+                      <input name="tacklerOne" type="number" placeholder="00">
                     </div>
                     <div class="col">
                       <h2>Tackler 2</h2>
-                      <input name="tackler2" type="number" placeholder="00">
+                      <input name="tacklerTwo" type="number" placeholder="00">
                     </div>
                   </div>
                 </div>
