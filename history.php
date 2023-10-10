@@ -76,7 +76,8 @@
                 </tr>";
                 usleep(800000);
         }
-        echo "</table></form>";
+        echo "</table></form>
+            <form delete";
     } else {
         die;
     }
