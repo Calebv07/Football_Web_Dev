@@ -1,179 +1,86 @@
 <?php
-# Work for September 26, 2023
-TODO:
-//- [ ] Setup basic connection to database
-//- [ ] Select data for all tables
-//- [ ] Return all the data in a table format
-//- [ ] Stylize the return table (Task for Caleb)
+    $dbserver = "localhost";
+    $dbuser = "root";
+    $dbpass = "DynoMonitorFoodPan374$&%";
+    $dbname = "footballApp";
 
-$dbserver = "localhost";
-$dbuser = "root";
-$dbpass = "DynoMonitorFoodPan374$&%";
-$dbname = "footballApp";
-
-$conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
-
-
-if(!$conn) {
-    die("Connection Broken: " . mysqli_connect_error());
-}
-
-
-$sqlfieldD = "SELECT * FROM fieldData";
-$sqlfieldD = "SELECT gameID, playID, playType, hash, backField, directPlay, oForm, oPlay, oStrength FROM fieldData";
-
-$sqlgameD = "SELECT * FROM gameData";
-$sqlgameD = "SELECT * gameID, playID, result, gainLoss, ODK, yardLine, down, distance FROM gameData";
-
-$sqlgameI = "SELECT * FROM gameInfo";
-$sqlgameI = "SELECT * FROM gameID, playID, oppName, homeName, data";
-
-$sqlplay = "SELECT * FROM play";
-$sqlplay = "SELECT * FROM gameID, playID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo";
-
-$sqlplayerI = "SELECT * FROM playerinfo";
-$sqlplayerI = "SELECT * FROM playID, playNumber, firstName, lastName";
-
-
-if(mysqli_num_rows($result = mysqli_query($conn, $sqlfieldD)>0) {
-    echo "<table>
-            <tr>
-                <th>gameID</th>
-                <th>playID</th>
-                <th>playType</th>
-                <th>hash</th>
-                <th>directPlay</th>
-                <th>backField</th>
-                <th>oForm</th>
-                <th>oPlay</th>
-                <th>oStrength</th>
-            <tr>";
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>
-                <td>" . $row['gameID'] . "</td>
-                <td>" . $row['playID'] . "</td>
-                <td>" . $row['playType'] . "</td>
-                <td>" . $row['hash'] . "</td>
-                <td>" . $row['directPlay'] . "</td>
-                <td>" . $row['backField'] . "</td>
-                <td>" . $row['oForm'] . "</td>
-                <td>" . $row['oPlay'] . "</td>
-                <td>" . $row['oStrength'] . "</td>
-              </tr>";
+    $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
+    if(!$conn) {
+        die("Connection Broken: " . mysqli_connect_error());
     }
-    echo "</table>";
-} else {
-    die;
-}
 
+    $sqlfieldD = "SELECT playID, playType, hash, backField, directPlay, oForm, oPlay, oStrength FROM fieldData";
+    $sqlgameD = "SELECT playID, result, gainLoss, ODK, yardLine, down, distance FROM gameData";
+    $sqlgameI = "SELECT playID, oppName, homeName, date FROM gameInfo";
+    $sqlplay = "SELECT playID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo FROM play";
 
-if(mysqli_num_rows($result2 = mysqli_query($conn, $sqlgameD)>0) {
-    echo "<table>
-            <tr>
-                <th>gameID</th>
-                <th>playID</th>
-                <th>result</th>
-                <th>gainLoss</th>
-                <th>ODK</th>
-                <th>yardLine</th>
-                <th>down</th>
-                <th>distance</th>
-            <tr>";
-    while($row = mysqli_fetch_assoc($result2)) {
-        echo "<tr>
-                <td>" . $row['gameID'] . "</td>
-                <td>" . $row['playID'] . "</td>
-                <td>" . $row['result'] . "</td>
-                <td>" . $row['gainLoss'] . "</td>
-                <td>" . $row['ODK'] . "</td>
-                <td>" . $row['yardLine'] . "</td>
-                <td>" . $row['down'] . "</td>
-                <td>" . $row['distance'] . "</td>
-              </tr>";
+    $resultFieldD = mysqli_query($conn, $sqlfieldD);
+    $resultGameD = mysqli_query($conn, $sqlgameD);
+    $resultGameI = mysqli_query($conn, $sqlgameI);
+    $resultPlay = mysqli_query($conn, $sqlplay);
+
+    if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
+        echo "<form action=\"\" method=\"POST\"><table>
+                <tr>
+                    <th>Play ID</th>
+                    <th>Opponent Name</th>
+                    <th>Home Name</th>
+                    <th>Date</th>
+                    <th>Play Type</th>
+                    <th>Hash</th>
+                    <th>Direction of Play</th>
+                    <th>Back Field</th>
+                    <th>Offensive Formation</th>
+                    <th>Offensive Play</th>
+                    <th>Offensive Strength</th>
+                    <th>Result</th>
+                    <th>Gain/Loss</th>
+                    <th>ODK</th>
+                    <th>Yard Line</th>
+                    <th>Down</th>
+                    <th>Distance</th>
+                    <th>Passer</th>
+                    <th>Receiver</th>
+                    <th>Rusher</th>
+                    <th>Returner</th>
+                    <th>Tackler One</th>
+                    <th>Tackler Two</th>
+                <tr>";
+
+        while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD)) && null !== ($table3 = mysqli_fetch_assoc($resultPlay))) {
+            echo "<tr>
+                    <td>" . $table0['playID'] . "</td>
+                    <td><input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\"></td>
+                    <td><input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\"></td>
+                    <td><input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\"></td>
+                    <td><select name=\"playType\"><option value=\"R\"" . (($table1['playType'] == "R" ) ? 'selected="selected"':"") . ">Run</option><option value=\"P\" " . (($table1['playType'] == "P" ) ? 'selected="selected"':"") . ">Pass</option></select></td>
+                    <td><select name=\"hash\"><option value=\"L\" " . (($table1['hash'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['hash'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['hash'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select></td>
+                    <td><select name=\"directPlay\"><option value=\"L\" " . (($table1['directPlay'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['directPlay'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['directPlay'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select></td>
+                    <td><input name=\"backField\" type=\"text\" value=\"" . $table1['backField'] . "\"></td>
+                    <td><input name=\"oForm\" type=\"text\" value=\"" . $table1['oForm'] . "\"></td>
+                    <td><input name=\"oPlay\" type=\"text\" value=\"" . $table1['oPlay'] . "\"></td>
+                    <td><input name=\"oStrength\" type=\"number\" value=\"" . $table1['oStrength'] . "\"></td>
+                    <td><input name=\"result\" type=\"text\" value=\"" . $table2['result'] . "\"></td>
+                    <td><input name=\"gainLoss\" type=\"text\" value=\"" . $table2['gainLoss'] . "\"></td>
+                    <td><select name=\"odk\" placeholder=\"ODK\"><option value=\"O\" " . (($table2['ODK'] == "O" ) ? 'selected="selected"':"") . ">Offensive</option><option value=\"D\" " . (($table2['ODK'] == "D" ) ? 'selected="selected"':"") . ">Defensive</option><option value=\"K\" " . (($table2['ODK'] == "K" ) ? 'selected="selected"':"") . ">Kicking</option></select></td>
+                    <td><input name=\"yardLine\" type=\"number\" value=\"" . $table2['yardLine'] . "\"></td>
+                    <td><select name=\"down\"><option value=\"1\" " . (($table2['down'] == "1" ) ? 'selected="selected"':"") . ">First</option><option value=\"2\" " . (($table2['down'] == "2" ) ? 'selected="selected"':"") . ">Second</option><option value=\"3\" " . (($table2['down'] == "3" ) ? 'selected="selected"':"") . ">Third</option><option value=\"4\" " . (($table2['down'] == "4" ) ? 'selected="selected"':"") . ">Fourth</option></select></td>
+                    <td><input name=\"distance\" type=\"number\" value=\"" . $table2['distance'] . "\"></td>
+                    <td><input name=\"returner\" type=\"number\" value=\"" . $table3['passer'] . "\"></td>
+                    <td><input name=\"rusher\" type=\"number\" value=\"" . $table3['receiver'] . "\"></td>
+                    <td><input name=\"passer\" type=\"number\" value=\"" . $table3['rusher'] . "\"></td>
+                    <td><input name=\"receiver\" type=\"number\" value=\"" . $table3['returner'] . "\"></td>
+                    <td><input name=\"tacklerOne\" type=\"number\" value=\"" . $table3['tacklerOne'] . "\"></td>
+                    <td><input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\"></td>
+                    <td><input type=submit></td>
+                </tr>";
+                usleep(800000);
+        }
+        echo "</table></form>";
+    } else {
+        die;
     }
-    echo "</table>";
-} else {
-    die;
-}
 
-
-if(mysqli_num_rows($request3 = mysqli_query($conn, $sqlgameI)>0) {
-    echo "<table>
-            <tr>
-                <th>gameID</th>
-                <th>playID</th>
-                <th>oppName</th>
-                <th>homeName</th>
-                <th>date</th>
-            <tr>";
-    while($row = mysqli_fetch_assoc($result3)) {
-        echo "<tr>
-                <td>" . $row['gameID'] . "</td>
-                <td>" . $row['playID'] . "</td>
-                <td>" . $row['oppName'] . "</td>
-                <td>" . $row['homeName'] . "</td>
-                <td>" . $row['date'] . "</td>
-              </tr>";
-    }
-    echo "</table>";
-} else {
-    die;
-}
-
-
-if(mysqli_num_rows($request4 = mysqli_query($conn, $sqlplay)>0) {
-    echo "<table>
-            <tr>
-                <th>gameID</th>
-                <th>playID</th>
-                <th>passer</th>
-                <th>receiver</th>
-                <th>rusher</th>
-                <th>returner</th>
-                <th>tacklerOne</th>
-                <th>tacklerTwo</th>
-            <tr>";
-    while($row = mysqli_fetch_assoc($result4)) {
-        echo "<tr>
-                <td>" . $row['gameID'] . "</td>
-                <td>" . $row['playID'] . "</td>
-                <td>" . $row['passer'] . "</td>
-                <td>" . $row['receiver'] . "</td>
-                <td>" . $row['rusher'] . "</td>
-                <td>" . $row['returner'] . "</td>
-                <td>" . $row['tacklerOne'] . "</td>
-                <td>" . $row['tacklerTwo'] . "</td>
-              </tr>";
-    }
-    echo "</table>";
-} else {
-    die;
-}
-
-
-if(mysqli_num_rows($request5 = mysqli_query($conn, $sqlplayerI)>0)) {
-    echo "<table>
-            <tr>
-                <th>play</th>
-                <th>playNumber</th>
-                <th>firstName</th>
-                <th>lastName</th>
-            <tr>";
-    while($row = mysqli_fetch_assoc($result5)) {
-        echo "<tr>
-                <td>" . $row['play'] . "</td>
-                <td>" . $row['playNumber'] . "</td>
-                <td>" . $row['firstName'] . "</td>
-                <td>" . $row['lastName'] . "</td>
-
-              </tr>";
-    }
-    echo "</table>";
-} else {
-    die;
-}
-;
-
-mysqli_close();
-  
-?>
+    mysqli_close($conn);
+    
+    ?> 
