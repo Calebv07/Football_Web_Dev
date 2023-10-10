@@ -1,27 +1,20 @@
 <?php 
 
-// Header Variables
 $oppName = $_POST["oppName"];
 $homeName = $_POST["homeName"];
 $date = $_POST["date"];
-
-// Quick Edit Bar
 $result = $_POST["result"];
 $gainLoss = $_POST["gainLoss"];
 $odk = $_POST["odk"];
 $yardLine = $_POST["yardLine"];
 $down = $_POST["down"];
 $distance = $_POST["distance"];
-
-// Player Section
 $returner = $_POST["returner"];
 $rusher = $_POST["rusher"];
 $passer = $_POST["passer"];
 $receiver = $_POST ["receiver"];
 $tacklerOne = $_POST ["tacklerOne"];
 $tacklerTwo = $_POST ["tacklerTwo"];
-
-// Field Data Section
 $playType = $_POST["playType"];
 $hash = $_POST["hash"];
 $directPlay = $_POST["directPlay"];
@@ -30,24 +23,16 @@ $oForm = $_POST["oForm"];
 $oPlay = $_POST["oPLay"];
 $oStrength = $_POST["oStrength"];
 
-// Quick View Bar
-$playNum = $_POST["playNum"];
 
-
-
-// Connection Variables to connect to the database
 $dbserver = 'localhost';
 $dbuser = 'root';
 $dbpass = 'DynoMonitorFoodPan374$&%';
 $dbname = 'footballApp';
-
-// Connection object, statement that connects to the database
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname); 
-
-// Checking connection, if unable to then kill process.
 if(!$conn) {
   die("Error connecting to database: \n" . mysqli_connect_error());
 }
+
 
 $queryPlay = "INSERT INTO play (gameID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo)
 VALUES ('1', '$passer', '$receiver', '$rusher', '$returner', '$tacklerOne', '$tacklerTwo')";
@@ -68,6 +53,6 @@ if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && m
 }
 
 mysqli_close($conn);
-header("Location: index.html")
+header("Location: index.html");
 
 ?>

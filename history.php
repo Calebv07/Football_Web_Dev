@@ -20,7 +20,7 @@
     $resultPlay = mysqli_query($conn, $sqlplay);
 
     if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
-        echo "<form action=\"\" method=\"POST\"><table>
+        echo "<table>
                 <tr>
                     <th>Play ID</th>
                     <th>Opponent Name</th>
@@ -48,8 +48,8 @@
                 <tr>";
 
         while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD)) && null !== ($table3 = mysqli_fetch_assoc($resultPlay))) {
-            echo "<tr>
-                    <td>" . $table0['playID'] . "</td>
+            echo "<form action=\"update.php\" method=\"POST\"><tr>
+                    <td><input name=\"playID\" type=\"number\" type=\"hidden\" value\"". $table0['playID'] . "\"></td>
                     <td><input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\"></td>
                     <td><input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\"></td>
                     <td><input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\"></td>
@@ -73,11 +73,10 @@
                     <td><input name=\"tacklerOne\" type=\"number\" value=\"" . $table3['tacklerOne'] . "\"></td>
                     <td><input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\"></td>
                     <td><input type=submit></td>
-                </tr>";
+                </tr></form>";
                 usleep(800000);
         }
-        echo "</table></form>
-            <form delete";
+        echo "</table>";
     } else {
         die;
     }
