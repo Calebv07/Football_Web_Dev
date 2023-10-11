@@ -44,7 +44,7 @@ WHERE playID = '$playID'";
 $queryGameData = "UPDATE gameData SET gameID = '1', result = '$result', gainLoss = '$gainLoss', ODK = '$odk', yardLine = '$yardLine', down = '$down', distance = '$distance'
 WHERE playID = '$playID'";
 
-$queryGameInfo = "UPDATE gameInfo SET (gameID = '1', oppName = '$oppName', homeName = '$homeName', date = '$date'
+$queryGameInfo = "UPDATE gameInfo SET gameID = '1', oppName = '$oppName', homeName = '$homeName', date = '$date'
 WHERE playID = '$playID'";
 
 if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && mysqli_query($conn, $queryGameData) && mysqli_query($conn, $queryGameInfo)) {

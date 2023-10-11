@@ -75,7 +75,6 @@
                     <td><input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\"></td>
                     <td><input type=submit></td>
                 </tr></form>";
-                usleep(500000);
         }
         echo "</table>";
     } else {
