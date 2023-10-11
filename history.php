@@ -85,12 +85,14 @@
         }
         echo "</table>
             <br>
-            <button id=\"submitAll\">Submit All Edits</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
+            <button id=\"submitAll\">Submit All Data</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
             <script>
                 $('#submitAll').click(function() {
-                    $('#playDataForm').submit();
-                });            
-            </script>
+                    // Select all the forms within the body
+                    $('form#playDataForm').each(function() {
+                        $(this).submit();
+                    });
+                });
             </body>
             </html>";
     } else {
