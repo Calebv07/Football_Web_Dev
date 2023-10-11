@@ -48,7 +48,7 @@
                 <tr>";
 
         while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD)) && null !== ($table3 = mysqli_fetch_assoc($resultPlay))) {
-            echo "<form action=\"update.php\" method=\"POST\"><tr>
+            echo "<form id=\"playDataForm\" action=\"update.php\" method=\"POST\"><tr>
                     <input name=\"playID\" type=\"hidden\" value=\"". $table0['playID'] . "\">
                     <td>". $table0['playID'] . "</td>
                     <td><input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\"></td>
@@ -77,7 +77,14 @@
                     <td><input type=submit value=\"Delete\"></form></td>
                 </tr>";
         }
-        echo "</table>";
+        echo "</table>
+            <br>
+            <button id=\"submitAll\">Submit All Edits</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
+            <script>
+                $('#submitAll').click(function(){
+                    $('#playDataForm').submit();
+                });
+            </script>";
     } else {
         die;
     }
