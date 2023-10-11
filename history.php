@@ -79,9 +79,9 @@
         }
         echo "</table>
             <br>
-            <button id=\"submitAll\">Submit All Edits</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
+            <button id=\"submitAll\" onclick=\"submitAllForms()\">Submit All Edits</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
             <script>
-                $('#submitAll').click(function(){
+                $('#submitAll').click(submitAllForms(){
                     $('#playDataForm').submit();
                 });
             </script>";
