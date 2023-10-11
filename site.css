@@ -38,20 +38,24 @@ body {
 
 }
 .quickView {
-  
 }
 body .background{
 
 }
 header {
-
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-left: 3%;
+  margin-right: 3%;
 }
-main {
 
+main {
 }
 
 .quickEdit {
-
+  display: flex;
+  justify-content: space-around;
 }
 
 .fieldAndPlayer {
@@ -86,9 +90,7 @@ main {
 }
 .fieldDataSelection {
   font-size: 1.5em;
-  display: flex;
-  justify-content:  space-evenly;
-  flex-flow: wrap;
+
 }
 
 
