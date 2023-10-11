@@ -54,7 +54,7 @@
                 <tr>";
 
         while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD)) && null !== ($table3 = mysqli_fetch_assoc($resultPlay))) {
-            echo "<form id=\"playDataForm\" action=\"update.php\" method=\"POST\"><tr>
+            echo "<tr><form id=\"playDataForm\" action=\"update.php\" method=\"POST\">
                     <input name=\"playID\" type=\"hidden\" value=\"". $table0['playID'] . "\">
                     <td>". $table0['playID'] . "</td>
                     <td><input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\"></td>
