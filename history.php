@@ -93,6 +93,7 @@
                         $(this).submit();
                     });
                 });
+            </script>
             </body>
             </html>";
     } else {
