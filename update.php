@@ -35,10 +35,10 @@ if(!$conn) {
 }
 
 
-$queryPlay = "UPDATE play SET (gameID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo)
-VALUES ('1', '$passer', '$receiver', '$rusher', '$returner', '$tacklerOne', '$tacklerTwo') WHERE playID = '$playID'";
+$queryPlay = "UPDATE play SET gameID = '1', passer = '$passer', receiver = $receiver, rusher = $rusher, returner = $returner, tacklerOne = $tacklerOne, tacklerTwo = $tacklerTwo
+WHERE playID = '$playID'";
 
-$queryFieldData = "UPDATE fieldData SET (gameID, playType, hash, directPlay, backField, oForm, oPlay, oStrength)
+$queryFieldData = "UPDATE fieldData SET gameID = '1', playType = '$playType', hash = '$hash', directPlay = $directPlay', backField, oForm, oPlay, oStrength)
 VALUES ('1', '$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength') WHERE playID = '$playID'";
 
 $queryGameData = "UPDATE gameData SET (gameID, result, gainLoss, ODK, yardLine, down, distance)
