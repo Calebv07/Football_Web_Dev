@@ -73,8 +73,9 @@
                     <td><input name=\"receiver\" type=\"number\" value=\"" . $table3['returner'] . "\"></td>
                     <td><input name=\"tacklerOne\" type=\"number\" value=\"" . $table3['tacklerOne'] . "\"></td>
                     <td><input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\"></td>
-                    <br><input type=submit></form><form action=\"deletePlay.php\" method=\"POST\"><input type=submit></form>
-                </tr>";
+                </tr><br>
+                <input type=submit></form><form action=\"deletePlay.php\" method=\"POST\">
+                <input type=submit value=\"Delete\"></form>";
         }
         echo "</table>";
     } else {
