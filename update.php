@@ -20,7 +20,7 @@ $hash = $_POST["hash"];
 $directPlay = $_POST["directPlay"];
 $backField = $_POST["backField"];
 $oForm = $_POST["oForm"];
-$oPlay = $_POST["oPLay"];
+$oPlay = $_POST["oPlay"];
 $oStrength = $_POST["oStrength"];
 $playNum = $_POST["playNum"];
 
