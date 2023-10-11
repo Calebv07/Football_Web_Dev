@@ -20,7 +20,13 @@
     $resultPlay = mysqli_query($conn, $sqlplay);
 
     if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
-        echo "<table>
+        echo "<!DOCTYPE html>
+            <html lang=\"en\">
+            <head>
+                <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+            </head>
+            <body>
+                <table>
                 <tr>
                     <th>Play ID</th>
                     <th>Opponent Name</th>
@@ -84,7 +90,9 @@
                 $('#submitAll').click(function() {
                     $('#playDataForm').submit();
                 });            
-            </script>";
+            </script>
+            </body>
+            </html>";
     } else {
         die;
     }
