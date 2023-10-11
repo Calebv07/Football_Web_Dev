@@ -35,17 +35,17 @@ if(!$conn) {
 }
 
 
-$queryPlay = "UPDATE play SET gameID = '1', passer = '$passer', receiver = $receiver, rusher = $rusher, returner = $returner, tacklerOne = $tacklerOne, tacklerTwo = $tacklerTwo
+$queryPlay = "UPDATE play SET gameID = '1', passer = '$passer', receiver = '$receiver', rusher = '$rusher', returner = '$returner', tacklerOne = '$tacklerOne', tacklerTwo = '$tacklerTwo'
 WHERE playID = '$playID'";
 
-$queryFieldData = "UPDATE fieldData SET gameID = '1', playType = '$playType', hash = '$hash', directPlay = $directPlay', backField, oForm, oPlay, oStrength)
-VALUES ('1', '$playType', '$hash', '$directPlay', '$backField', '$oForm', '$oPlay', '$oStrength') WHERE playID = '$playID'";
+$queryFieldData = "UPDATE fieldData SET gameID = '1', playType = '$playType', hash = '$hash', directPlay = '$directPlay', backField = '$backField', oForm = '$oForm', oPlay = '$oPlay', oStrength = '$oStrength'
+WHERE playID = '$playID'";
 
-$queryGameData = "UPDATE gameData SET (gameID, result, gainLoss, ODK, yardLine, down, distance)
-VALUES ('1', '$result', '$gainLoss', '$odk', '$yardLine', '$down', '$distance') WHERE playID = '$playID'";
+$queryGameData = "UPDATE gameData SET gameID = '1', result = '$result', gainLoss = '$gainLoss', ODK = '$odk', yardLine = '$yardLine', down = '$down', distance = '$distance'
+WHERE playID = '$playID'";
 
-$queryGameInfo = "UPDATE gameInfo SET (gameID, oppName, homeName, date)
-VALUES ('1', '$oppName','$homeName','$date') WHERE playID = '$playID'";
+$queryGameInfo = "UPDATE gameInfo SET (gameID = '1', oppName = '$oppName', homeName = '$homeName', date = '$date'
+WHERE playID = '$playID'";
 
 if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && mysqli_query($conn, $queryGameData) && mysqli_query($conn, $queryGameInfo)) {
     echo "<br> New Record Created";
