@@ -24,15 +24,16 @@ body {
 }
 
 .container {
-  padding: 20px;
-  margin-top: 3%;
+  padding: 10px;
+  margin-top: 2%;
   margin-left: 3%;
   margin-right: 3%;
-  background: #8c8c8580;
+  background: #7f7f79b3;
   color: white;
   border-radius: 10px;
   font-size: 1vw;
   font-family: "Rockwell";
+  letter-spacing: .05em;
 }
 .numInput {
 
@@ -49,13 +50,31 @@ header {
   margin-left: 3%;
   margin-right: 3%;
 }
+.header input {
+  background-color: transparent;
+}
 
 main {
 }
 
 .quickEdit {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.quickEdit input {
+  width: 100px;
+  height: 36px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.quickEdit select {
+  width: 108px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .fieldAndPlayer {
@@ -66,14 +85,17 @@ main {
 .field {
   display: flex;
   align-items: center;
-  width: 400px;
+  justify-content: center;
+  width: 500px;
   flex-grow: 2;
   margin-right: 1.5%;
+  max-width: 1200px;
 }
 .player {
   font-size: 1em;
   flex-shrink: 1;
   margin-left: 1.5%;
+  padding-top: 3%;
 }
 .playerSection {
   width: 100%;
@@ -83,14 +105,39 @@ main {
   padding-bottom: 8%;
 }
 .player input {
-  width: 20%;
+  width: 30%;
   height: 40%;
-  border-radius: 10px;
-  font-size: 2em;
+  border-radius: 5px;
+  font-size: 1em;
 }
 .fieldDataSelection {
   font-size: 1.5em;
-
+  margin-bottom: 3%;
+  padding-bottom: 3%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.fieldDataSelection input {
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0px;
+}
+.fieldDataSelection select {
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+}
+.fieldOptions {
+  
+  width: 250px;
+  height: 20%;
+  border-radius: 5px;
 }
 
 
