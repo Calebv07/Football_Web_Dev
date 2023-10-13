@@ -18,6 +18,7 @@ body {
   position: fixed;
   width: 100vw;
   height: 100vh;
+  padding: 3%;
   background:
   linear-gradient( #1A1A1A, transparent),
     url(https://grainy-gradients.vercel.app/noise.svg);
@@ -26,8 +27,8 @@ body {
 .container {
   padding: 10px;
   margin-top: 2%;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
   background: #7f7f79b3;
   color: white;
   border-radius: 10px;
@@ -39,19 +40,38 @@ body {
 
 }
 .quickView {
-}
-body .background{
-
+  display: none;
 }
 header {
   display: flex;
-  justify-content: flex-start;
-  padding: 20px;
-  margin-left: 3%;
-  margin-right: 3%;
+  flex-wrap: wrap;
+}
+.headerInfo {
+  align-items: flex-start;
 }
 .header input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.dateInput {
   background-color: transparent;
+  border: 0;
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.5em;
+  text-align: center;
+}
+.submitButton {
+  background-color: #2fa45c;
+  border: 0;
+  height: 40px !important;
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: auto;
 }
 
 main {
@@ -112,8 +132,8 @@ main {
 }
 .fieldDataSelection {
   font-size: 1.5em;
-  margin-bottom: 3%;
-  padding-bottom: 3%;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
 }
 .row {
   display: flex;
@@ -124,17 +144,16 @@ main {
 }
 .fieldDataSelection input {
   width: 90%;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
   margin: 0px;
 }
 .fieldDataSelection select {
   width: 90%;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
 }
 .fieldOptions {
-  
   width: 250px;
   height: 20%;
   border-radius: 5px;
