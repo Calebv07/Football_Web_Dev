@@ -106,13 +106,45 @@ header {
   transition: 200ms;
 }
 .submitButton input:hover {
-  background-color: #6ab988;
+  background-color: #52a773;
   box-shadow: 0 10px #1b5c34;
   transform: translateY(-4px);
   transition: 200ms;
 }
 .submitButton input:active {
+  background-color: #196737;
   box-shadow: 0 2px #1b5c34 !important;
+  transform: translateY(4px);
+  transition: 100ms;
+}
+.historyButton {
+  margin-left: auto;
+  margin-right: -25%;
+}
+.historyButton {
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 6px #26405a;
+  background-color: #365C81;
+  border-radius: 5px; 
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.5em;
+  text-align: center;
+  transition: 200ms;
+}
+.historyButton img {
+  padding-top: 5px;
+}
+.historyButton:hover {
+  background-color: #546e89;
+  box-shadow: 0 10px #26405a;
+  transform: translateY(-4px);
+  transition: 200ms;
+}
+.historyButton:active {
+  background-color: #24415f;
+  box-shadow: 0 2px #26405a !important;
   transform: translateY(4px);
   transition: 100ms;
 }
