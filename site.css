@@ -1,6 +1,6 @@
 @font-face {
   font-family: Rockwell;
-  src: url(/fonts/ROCK.TTF);
+  src: url(/assets/fonts/ROCK.TTF);
 }
 ::placeholder {
   text-align: center; 
