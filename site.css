@@ -1,77 +1,213 @@
-.quickView {
-  background-color: #FF4C4C;
-  position: fixed;
-  height: 50px;
-  width: 65%;
-  text-align: center;
-  padding: 17px 10px;
-  margin: auto;
-  margin-bottom: .4em;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  color:white;
-  vertical-align:middle;
+@font-face {
+  font-family: Rockwell;
+  src: url(/fonts/ROCK.TTF);
 }
-body {
-  overflow-x: hidden;
-  background-color: black;
+::placeholder {
+  text-align: center; 
 }
 
-body .background{
-  z-index: -1;
-  position: absolute;
-  padding: 0;
+body {
+  overflow-x: hidden;
   margin: 0;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.background {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 3%;
   background:
-  linear-gradient( #1A1A1A, transparent),
+  linear-gradient( #101010, #11111188),
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
-header {
-  margin-top: 50px;
+
+.container {
+  padding: 10px;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: #7f7f79b3;
+  color: white;
+  border-radius: 10px;
+  font-size: 1vw;
+  font-family: "Rockwell";
+  letter-spacing: .06em;
 }
-main {
-  color: #FBF7F1;
-  z-index: 1;
+input{
+  box-shadow: inset 0 8px #989898;
+  background-color: #e8e8e8;
+  border: 0;
+  transition: 200ms;
+}
+input:focus{
+  box-shadow: inset 0 12px #d9d9d9;
+  background-color: #f7f7f7;
+  color: black;
+  transform: translateY(-4px);
+  transition: 200ms;
+}
+select {
+  box-shadow: inset 0 8px #989898;
+  background-color: #e8e8e8;
+  border: 0;
+  transition: 200ms;
+}
+select:focus {
+  box-shadow: inset 0 12px #d9d9d9;
+  background-color: #f7f7f7;
+  transform: translateY(-4px);
+  transition: 200ms;
+}
+
+.quickView {
+  display: none;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2%;;
+}
+.header input {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 3%;
+  margin-bottom: 10px;
+}
+.dateInput {
+  box-shadow: 0 0 !important;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.5em;
+  text-align: center;
+}
+.submitButton {
+  margin-left: auto;
+  margin-right: 3%;
+}
+.submitButton input{
+  background: url('navIcon/submitIcon.svg') no-repeat top 7.5px left 30px;
+  background-size: 35px;
+  box-shadow: 0 6px #1b5c34;
+  background-color: #2fa45c;
+  border: 0;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px !important;
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.5em;
+  text-align: center;
+  transition: 200ms;
+}
+.submitButton input:hover {
+  background-color: #6ab988;
+  box-shadow: 0 10px #1b5c34;
+  transform: translateY(-4px);
+  transition: 200ms;
+}
+.submitButton input:active {
+  box-shadow: 0 2px #1b5c34 !important;
+  transform: translateY(4px);
+  transition: 100ms;
 }
 
 .quickEdit {
-  background-color: rgba(180, 180, 170, .5);
-  padding: 1% 2%;
-  margin-top: 2%;
-  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
-.quickEdit input option {
-    width:50px;
+.quickEdit input {
+  width: 100px;
+  height: 36px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.quickEdit select {
+  width: 108px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.fieldAndPlayer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 .field {
-  background-color: rgba(180, 180, 170, .5);
-  margin: 3%;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  flex-grow: 2;
+  margin-right: 1.5%;
+  max-width: 1200px;
 }
 .player {
-  background-color: rgba(180, 180, 170, .5);
-  padding: 3% 2%;
-  margin: 3%;
-  border-radius: 10px;
+  font-size: 1em;
+  flex-shrink: 1;
+  margin-left: 1.5%;
+  padding-top: 3%;
+}
+.playerSection {
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-bottom: 8%;
+}
+.player input {
+  width: 30%;
+  height: 40%;
+  border-radius: 5px;
+  font-size: 1em;
+  color: red;
 }
 .fieldDataSelection {
-  background-color: rgba(180, 180, 170, .5);
-  padding: 2% 2%;
-  margin: 3%;
-  border-radius: 10px;
+  font-size: 1.5em;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.fieldDataSelection input {
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0px;
+}
+.fieldDataSelection select {
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+}
+.fieldOptions {
+  width: 250px;
+  height: 20%;
+  border-radius: 5px;
+}
+
+
 
 .background .dot1 {
   display: none;
   position: absolute;
-  height: 800px;
-  width: 800px;
+  width: 50%;
+  padding-bottom: 50%;
+  border-radius: 50%;
   filter: blur(500px);
   background-color: #A81307;
   opacity: .5;
@@ -81,31 +217,34 @@ main {
 .background .dot2 {
   display: none;
   position: absolute;
-  height: 1200px;
-  width: 1200px;
+  width: 60%;
+  padding-bottom: 60%;
+  border-radius: 50%;
   filter: blur(500px);
   background-color: #A81307;
   opacity: .5;
-  top: -110%;
-  left:-40%;
+  top: -80%;
+  left:-30%;
 }
 .background .dot3 {
   position: absolute;
-  height: 700px;
-  width: 700px;
+  width: 35%;
+  padding-bottom: 35%;
+  border-radius: 50%;
   filter: blur(500px);
   background-color: #A81307;
   opacity: .5;
-  bottom: -60%;
-  left:-5%;
+  bottom: -50%;
+  left: -5%;
 }
 .background .dot4 {
   position: absolute;
-  height: 900px;
-  width: 900px;
+  width: 40%;
+  padding-bottom: 40%;
+  border-radius: 50%;
   filter: blur(100px);
   background-color: #A81307;
   opacity: .5;
-  top: -50%;
-  right:-40%;
+  top: -70vh;
+  right: -20vw;
 }
