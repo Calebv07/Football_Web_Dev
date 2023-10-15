@@ -1,13 +1,16 @@
-<?php 
-$favoriteColor = $_POST["favColor"];
-$favNum = $_POST["favNum"];
-$currentDate = $_POST["currentDate"];
-$gender = $_POST["gender"];
+<?php
+$playID = $_POST["playID"];
+$kicker = $_POST["kicker"];
+$passer = $_POST["passer"];
+$reciever = $_POST["reciever"];
+$returner = $_POST["returner"];
+$tackerTwo = $_POST["tacklerTwo"];
+$tacklerOne = $_POST["tacklerOne"];
 
 $dbserver = "localhost";
 $dbuser = "root";
 $dbpass = "DynoMonitorFoodPan374$&%";
-$dbname = "practiceForm";
+$dbname = "footballApp";
 
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
 if($conn) {
@@ -16,15 +19,15 @@ if($conn) {
     die("Connection Broken: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO identity (firstName, lastName, email, gender)
-VALUES ('$favColor', '$favNum', '$currentDate', '$gender')";
+$sql = "INSERT INTO play (playID, kicker, passer, receiver, tacklerOne, tacklerTwo)
+VALUES ('$playID', '$kicker', '$passer', '$reciever', '$tacklerOne', '$tacklerTwo')";
 
 if (mysqli_query($conn, $sql)) {
     echo "<br> New Record Created";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
 mysqli_close($conn);
 
+//
 ?>

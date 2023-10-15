@@ -203,6 +203,7 @@ header {
 
 
 .background .dot1 {
+  display: none;
   position: absolute;
   width: 50%;
   padding-bottom: 50%;
@@ -214,6 +215,7 @@ header {
   right: -20%;
 }
 .background .dot2 {
+  display: none;
   position: absolute;
   width: 60%;
   padding-bottom: 60%;
