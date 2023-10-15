@@ -91,7 +91,7 @@ header {
   margin-right: 3%;
 }
 .submitButton input{
-  background: url('navIcon/submitIcon.svg') no-repeat top 7.5px left 30px;
+  background: url('assets/navIcon/submitIcon.svg') no-repeat top 7.5px left 30px;
   background-size: 35px;
   box-shadow: 0 6px #1b5c34;
   background-color: #2fa45c;
@@ -203,7 +203,6 @@ header {
 
 
 .background .dot1 {
-  display: none;
   position: absolute;
   width: 50%;
   padding-bottom: 50%;
@@ -215,7 +214,6 @@ header {
   right: -20%;
 }
 .background .dot2 {
-  display: none;
   position: absolute;
   width: 60%;
   padding-bottom: 60%;
