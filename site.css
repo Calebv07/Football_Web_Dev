@@ -5,6 +5,20 @@
 ::placeholder {
   text-align: center; 
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #151515;
+}
+::-webkit-scrollbar-thumb {
+  background: #303030;
+  border-radius: 2.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
 
 body {
   z-index: 0;
