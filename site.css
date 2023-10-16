@@ -13,7 +13,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  animation: onLoadOverFlow 1.8s forwards;
+  animation: onLoadOverFlow .6s forwards;
 }
 .background {
   z-index: -1;
