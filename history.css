@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Rockwell;
+    src: url(/assets/fonts/ROCK.TTF);
+}
+@font-face {
+    font-family: BebasNeue;
+    src: url(/assets/fonts/BebasNeue-Regular.ttf);
+}
+  ::placeholder {
+    text-align: center; 
+  }
+  
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+  }
+  .background {
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 3%;
+    background:
+    linear-gradient( #101010, #11111188),
+      url(https://grainy-gradients.vercel.app/noise.svg);
+  }
+  .container {
+    padding: 10px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    background: #7f7f79b3;
+    color: white;
+    font-family: "Rockwell";
+    letter-spacing: .06em;
+  }
+  .tableHeader {
+    border-radius: 50px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 2%;
+    color: white;
+    font-family: "BebasNeue";
+    font-size: 2em;
+  }
+  header h3 {
+    margin: 0;
+    font-family: "Rockwell";
+    font-size: 1em;
+  }
+
+
+  .background .dot1 {
+    position: absolute;
+    width: 50%;
+    padding-bottom: 50%;
+    border-radius: 50%;
+    filter: blur(500px);
+    background-color: #A81307;
+    opacity: .5;
+    bottom: -40%;
+    right: -20%;
+  }
+  .background .dot2 {
+    position: absolute;
+    width: 60%;
+    padding-bottom: 60%;
+    border-radius: 50%;
+    filter: blur(500px);
+    background-color: #A81307;
+    opacity: .5;
+    top: -80%;
+    left:-30%;
+  }
+  .background .dot3 {
+    position: absolute;
+    width: 35%;
+    padding-bottom: 35%;
+    border-radius: 50%;
+    filter: blur(500px);
+    background-color: #A81307;
+    opacity: .5;
+    bottom: -50%;
+    left: -5%;
+  }
+  .background .dot4 {
+    position: absolute;
+    width: 40%;
+    padding-bottom: 40%;
+    border-radius: 50%;
+    filter: blur(100px);
+    background-color: #A81307;
+    opacity: .5;
+    top: -70vh;
+    right: -20vw;
+  }

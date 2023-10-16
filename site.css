@@ -7,11 +7,13 @@
 }
 
 body {
+  z-index: 0;
   overflow-x: hidden;
   margin: 0;
   width: 100vw;
   height: 100vh;
   background-color: black;
+  animation: onLoadOverFlow 1.8s forwards;
 }
 .background {
   z-index: -1;
@@ -23,13 +25,25 @@ body {
   linear-gradient( #101010, #11111188),
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  animation: onLoadFade 1s forwards;
+}
 
 .container {
+  z-index: 0;
   padding: 10px;
   margin-top: 2%;
   margin-left: 2%;
   margin-right: 2%;
-  background: #7f7f79b3;
+  background: #575753b3;
   color: white;
   border-radius: 10px;
   font-size: 1vw;
@@ -66,9 +80,11 @@ select:focus {
   display: none;
 }
 header {
+  z-index: 0;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 2%;;
+  padding-top: 2%;
+  animation: onLoadHeader 1s forwards;
 }
 .header input {
   width: 300px;
@@ -119,7 +135,7 @@ header {
 }
 .historyButton {
   margin-left: auto;
-  margin-right: -25%;
+  margin-right: 0vh;
 }
 .historyButton {
   height: 50px;
@@ -155,6 +171,7 @@ header {
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  animation: onLoad 1s forwards;
 }
 .quickEdit input {
   width: 100px;
@@ -173,6 +190,7 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  animation: onLoad 1.4s forwards;
 }
 .field {
   display: flex;
@@ -207,6 +225,7 @@ header {
   font-size: 1.5em;
   margin-bottom: 5%;
   padding-bottom: 2%;
+  animation: onLoad 1.8s forwards;
 }
 .row {
   display: flex;
@@ -277,4 +296,22 @@ header {
   opacity: .5;
   top: -70vh;
   right: -20vw;
+}
+@keyframes onLoad {
+  0% {transform: translateY(500px);}
+  100% {transform: translateY(0px);}
+}
+@keyframes onLoadHeader {
+  0% {transform: translateY(-500px);}
+  100% {transform: translateY(0px);}
+}
+@keyframes onLoadOverFlow {
+  0% {overflow-y: hidden;}
+  99% {overflow-y: hidden;}
+  100% {overflow-y: auto;}
+}
+@keyframes onLoadFade {
+  0% {background-color: #272121;}
+  20% {background-color: #272121;}
+  100% {background-color: invisible;}
 }
