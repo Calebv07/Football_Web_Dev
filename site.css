@@ -65,28 +65,16 @@ body {
   font-family: "Rockwell";
   letter-spacing: .06em;
 }
-input{
+input, select{
   box-shadow: inset 0 8px #989898;
   background-color: #e8e8e8;
   border: 0;
   transition: 200ms;
 }
-input:focus{
+input:focus, select:focus{
   box-shadow: inset 0 12px #d9d9d9;
   background-color: #f7f7f7;
   color: black;
-  transform: translateY(-4px);
-  transition: 200ms;
-}
-select {
-  box-shadow: inset 0 8px #989898;
-  background-color: #e8e8e8;
-  border: 0;
-  transition: 200ms;
-}
-select:focus {
-  box-shadow: inset 0 12px #d9d9d9;
-  background-color: #f7f7f7;
   transform: translateY(-4px);
   transition: 200ms;
 }
