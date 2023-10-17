@@ -61,7 +61,7 @@ header {
     color: white;
     font-family: "BebasNeue";
     font-size: 3em;
-    line-height: .3em;
+    line-height: 1em;
 }
 header h3 {
     margin: 0;
@@ -69,24 +69,36 @@ header h3 {
     font-size: .8em !important;
 }
 .container {
-    /*padding: 10px;
-    margin-top: 2%;
+    padding: 10px;
+    margin-top: 10px;
     margin-left: 2%;
-    margin-right: 2%;*/
+    margin-right: 2%;
     width: 96%;
     background: #7f7f79b3;
+    height: 30px;
+    border-radius: 15px;;
 }
-.data {
-
+.flexBox {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-th {
+.tableHeader {
+    color: white;
+    font-family: "BebasNeue";
+    margin-top: 2%;
+    font-size: 1vw;
+    letter-spacing: .06em;
+    border-radius: 50px;
+}
+td {
     color: white;
     font-family: "Rockwell";
     font-size: 1vw;
     letter-spacing: .06em;
 }
-.tableHeader {
-    border-radius: 50px;
+.hide {
+    display: none;
 }
 
 
