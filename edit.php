@@ -48,9 +48,6 @@
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
                         <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
                         <input name=\"date\" type=\"date\" class=\"dateInput\"></input>
-                        <div class=\"historyButton\">
-                            <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
-                        </div>
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
                         </div>

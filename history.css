@@ -76,12 +76,12 @@ header h3 {
     width: 96%;
     background: #7f7f79b3;
     height: 30px;
-    border-radius: 15px;;
+    border-radius: 50px;
 }
 .flexBox {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: row wrap;
 }
 .tableHeader {
     color: white;
@@ -96,6 +96,7 @@ td {
     font-family: "Rockwell";
     font-size: 1vw;
     letter-spacing: .06em;
+    text-align: start;
 }
 .hide {
     display: none;
