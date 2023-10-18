@@ -46,19 +46,11 @@
                     </aside>
                     <header class=\"header\">
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
-                        
-                        <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
-<<<<<<< HEAD
-                        
-                       <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
-                    
+                        <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">                        
+                        <input name=\"date\" type=\"date\" class=\"dateInput\" value=\"" . $table0['date'] . "\">
                         <div class=\"historyButton\">
                             <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
-                            
                         </div>
-=======
-                        <input name=\"date\" type=\"date\" class=\"dateInput\"></input>
->>>>>>> de0b0690c131186541bde2e5a547c682ba30d364
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
                         </div>
@@ -121,10 +113,7 @@
                             <div class=\"row\">
                                 <div class=\"fieldOptions\">
                                     <h4>Playtype</h4>
-                                    <select name=\"playType\" placeholder=\"Playtype\">
-                                    <option value=\"R\">Run</option>
-                                    <option value=\"P\">Pass</option>
-                                    </select>
+                                    <select name=\"playType\"><option value=\"R\"" . (($table1['playType'] == "R" ) ? 'selected="selected"':"") . ">Run</option><option value=\"P\" " . (($table1['playType'] == "P" ) ? 'selected="selected"':"") . ">Pass</option></select>
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Hash</h4>
