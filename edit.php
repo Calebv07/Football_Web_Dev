@@ -37,11 +37,6 @@
                     .fade {
                         animation: onLoadFadeEdit 1s forwards !important;
                     }
-                    @keyframes onLoadFadeEdit {
-                        0% {background-color: #272121;}
-                        20% {background-color: #272121;}
-                        100% {background-color: #27212149;}
-                    }
                 </style>
             </head>
             <body>

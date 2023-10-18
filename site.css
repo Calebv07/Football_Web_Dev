@@ -318,3 +318,8 @@ header {
   20% {background-color: #272121;}
   100% {background-color: invisible;}
 }
+@keyframes onLoadFadeEdit {
+  0% {background-color: #272121;}
+  20% {background-color: #272121;}
+  100% {background-color: #27212165;}
+}

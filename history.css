@@ -76,7 +76,7 @@ header h3 {
     width: 96%;
     background: #7f7f79b3;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 .flexBox {
     display: grid;
@@ -87,14 +87,14 @@ header h3 {
     color: white;
     font-family: "BebasNeue";
     margin-top: 2%;
-    font-size: 1vw;
+    font-size: 1.5m;
     letter-spacing: .06em;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 td {
     color: white;
     font-family: "Rockwell";
-    font-size: 1em;
+    font-size: 1.5em;
     letter-spacing: .06em;
     text-align: center;
 }
