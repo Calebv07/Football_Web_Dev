@@ -48,6 +48,7 @@
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
                         
                         <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
+<<<<<<< HEAD
                         
                        <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
                     
@@ -55,6 +56,9 @@
                             <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
                             
                         </div>
+=======
+                        <input name=\"date\" type=\"date\" class=\"dateInput\"></input>
+>>>>>>> de0b0690c131186541bde2e5a547c682ba30d364
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
                         </div>
