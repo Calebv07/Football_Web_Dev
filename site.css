@@ -40,14 +40,14 @@ body {
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
 .fade {
-  position: absolute;
+  position: relative;
   pointer-events: none;
   top: 0;
   left: 0;
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: 10;
   animation: onLoadFade 1s forwards;
 }
