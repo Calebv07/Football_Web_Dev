@@ -46,10 +46,14 @@
                     </aside>
                     <header class=\"header\">
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
+                        
                         <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
-                        <input name=\"date\" type=\"date\" class=\"dateInput\"></input>
+                        
+                       <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
+                    
                         <div class=\"historyButton\">
                             <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
+                            
                         </div>
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
@@ -57,21 +61,21 @@
                     </header>
                     <main>
                         <section class=\"quickEdit container\">
-                            <input name=\"result\" type=\"text\" placeholder=\"Result\" >
-                            <input name=\"gainLoss\" type=\"text\" placeholder=\"Gain / Loss\" >
+                            <input name=\"result\" type=\"text\" value=\"" . $table2['result'] . "\">
+                            <input name=\"gainLoss\" type=\"text\" value=\"" . $table2['gainLoss'] . "\">
                             <select name=\"odk\" placeholder=\"ODK\" >
                                 <option value=\"O\">Offensive</option>
                                 <option value=\"D\">Defensive</option>
                                 <option value=\"K\">Kicking</option>
                             </select>
-                            <input name=\"yardLine\" type=\"number\" placeholder=\"Yard Line\" >
+                            <input name=\"yardLine\" type=\"number\" value=\"" . $table2['yardLine'] . "\">
                             <select name=\"down\" placeholder=\"Down\" >
                                 <option value=\"1\">First</option>
                                 <option value=\"2\">Second</option>
                                 <option value=\"3\">Third</option>
                                 <option value=\"4\">Fourth</option>
                             </select>
-                            <input name=\"distance\" type=\"number\" placeholder=\"Distance\" >
+                            <input name=\"distance\" type=\"number\" value=\"" . $table2['distance'] . "\">
                         </section>
                         <section class=\"fieldAndPlayer\">
                             <div class=\"field container\">
@@ -81,31 +85,30 @@
                                 <div class=\"playerSection\">
                                   <div>
                                     <h2>Returner</h2>
-                                    <input name=\"returner\" type=\"number\" placeholder=\"00\">
+                                    <input name=\"returner\" type=\"number\" value=\"" . $table3['passer'] . "\">
                                   </div>
                                   <div>
-                                    <h2>Rusher</h2>
-                                    <input name=\"rusher\" type=\"number\" placeholder=\"00\">
+                                    <input name=\"rusher\" type=\"number\" value=\"" . $table3['receiver'] . "\">
                                   </div>
                                 </div>
                                 <div class=\"playerSection\">
                                   <div>
                                     <h2>Passer</h2>
-                                    <input name=\"passer\" type=\"number\" placeholder=\"00\">
+                                    <input name=\"passer\" type=\"number\" value=\"" . $table3['rusher'] . "\">
                                   </div>
                                   <div>
                                     <h2>Receiver</h2>
-                                    <input name=\"receiver\" type=\"number\" placeholder=\"00\">
+                                    <input name=\"receiver\" type=\"number\" value=\"" . $table3['returner'] . "\">
                                   </div>
                                 </div>
                                 <div class=\"playerSection\">
                                     <div>
                                         <h2>Tackler 1</h2>
-                                        <input name=\"tacklerOne\" type=\"number\" placeholder=\"00\">
+                                        <input name=\"tacklerOne\" type=\"number\" value=\"" . $table3['tacklerOne'] . "\">
                                       </div>
                                       <div>
                                         <h2>Tackler 2</h2>
-                                        <input name=\"tacklerTwo\" type=\"number\" placeholder=\"00\">
+                                        <input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\">
                                       </div>
                                 </div>
                               </div>
@@ -137,21 +140,20 @@
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Backfield</h4>
-                                    <input name=\"backField\" type=\"text\" placeholder=\"Backfield\">
+                                    <input name=\"backField\" type=\"text\" value=\"" . $table1['backField'] . "\">
                                 </div>
                             </div>
                             <div class=\"row\">
                                 <div class=\"fieldOptions\">
                                     <h4>Offensive Formation</h4>
-                                    <input name=\"oForm\" type=\"text\" placeholder=\"Offensive Formation\">
+                                    <input name=\"oForm\" type=\"text\" value=\"" . $table1['oForm'] . "\">
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Offensive Play</h4>
-                                    <input name=\"oPlay\" type=\"text\" placeholder=\"Offensive Play\">
+                                    <input name=\"oPlay\" type=\"text\" value=\"" . $table1['oPlay'] . "\">
                                 </div>
                                 <div class=\"fieldOptions\">
-                                    <h4>Offensive Strength</h4>
-                                    <input name=\"oStrength\" type=\"number\" placeholder=\"Offensive Strength\">
+                                    <h4>Offensive Strength</h4><input name=\"oStrength\" type=\"number\" value=\"" . $table1['oStrength'] . "\">
                                 </div>
                                 </select>
                             </div>
@@ -165,5 +167,5 @@
     }
 
     mysqli_close($conn);
-    
+
 ?>
