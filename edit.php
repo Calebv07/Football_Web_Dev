@@ -46,10 +46,14 @@
                     </aside>
                     <header class=\"header\">
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
-                        <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">                        
-                        <input name=\"date\" type=\"date\" class=\"dateInput\" value=\"" . $table0['date'] . "\">
+                        
+                        <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
+                        
+                       <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
+                    
                         <div class=\"historyButton\">
                             <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
+                            
                         </div>
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
@@ -59,18 +63,9 @@
                         <section class=\"quickEdit container\">
                             <input name=\"result\" type=\"text\" value=\"" . $table2['result'] . "\">
                             <input name=\"gainLoss\" type=\"text\" value=\"" . $table2['gainLoss'] . "\">
-                            <select name=\"odk\" placeholder=\"ODK\" >
-                                <option value=\"O\">Offensive</option>
-                                <option value=\"D\">Defensive</option>
-                                <option value=\"K\">Kicking</option>
-                            </select>
+                           <select name=\"odk\" placeholder=\"ODK\"><option value=\"O\" " . (($table2['ODK'] == "O" ) ? 'selected="selected"':"") . ">Offensive</option><option value=\"D\" " . (($table2['ODK'] == "D" ) ? 'selected="selected"':"") . ">Defensive</option><option value=\"K\" " . (($table2['ODK'] == "K" ) ? 'selected="selected"':"") . ">Kicking</option></select>
                             <input name=\"yardLine\" type=\"number\" value=\"" . $table2['yardLine'] . "\">
-                            <select name=\"down\" placeholder=\"Down\" >
-                                <option value=\"1\">First</option>
-                                <option value=\"2\">Second</option>
-                                <option value=\"3\">Third</option>
-                                <option value=\"4\">Fourth</option>
-                            </select>
+                            <select name=\"down\"><option value=\"1\" " . (($table2['down'] == "1" ) ? 'selected="selected"':"") . ">First</option><option value=\"2\" " . (($table2['down'] == "2" ) ? 'selected="selected"':"") . ">Second</option><option value=\"3\" " . (($table2['down'] == "3" ) ? 'selected="selected"':"") . ">Third</option><option value=\"4\" " . (($table2['down'] == "4" ) ? 'selected="selected"':"") . ">Fourth</option></select>
                             <input name=\"distance\" type=\"number\" value=\"" . $table2['distance'] . "\">
                         </section>
                         <section class=\"fieldAndPlayer\">
@@ -117,19 +112,11 @@
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Hash</h4>
-                                    <select name=\"hash\" placeholder=\"Hash\">
-                                    <option value=\"L\">Left</option>
-                                    <option value=\"M\">Middle</option>
-                                    <option value=\"R\">Right</option>
-                                    </select>
+                                    <select name=\"hash\"><option value=\"L\" " . (($table1['hash'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['hash'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['hash'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select>
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Direction of Play</h4>
-                                    <select name=\"directPlay\" placeholder=\"Direction of Play\">
-                                    <option value=\"L\">Left</option>
-                                    <option value=\"M\">Middle</option>
-                                    <option value=\"R\">Right</option>
-                                    </select>
+                                    <select name=\"directPlay\"><option value=\"L\" " . (($table1['directPlay'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['directPlay'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['directPlay'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select>
                                 </div>
                                 <div class=\"fieldOptions\">
                                     <h4>Backfield</h4>
