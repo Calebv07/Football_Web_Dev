@@ -33,6 +33,13 @@
                 <meta charset=\"utf-8\">
                 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
                 <link rel=\"stylesheet\" href=\"site.css\">
+                <style>
+                    @keyframes onLoadFade {
+                        0% {background-color: #272121;}
+                        20% {background-color: #272121;}
+                        100% {background-color: #27212149;}
+                    }
+                </style>
             </head>
             <body>
                 <span class=\"fade\"></span>
