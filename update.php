@@ -1,5 +1,5 @@
 <?php
-$playID = $_POST["playID"];
+$playID = $_POST["playIDEdit"];
 $oppName = $_POST["oppName"];
 $homeName = $_POST["homeName"];
 $date = $_POST["date"];
@@ -55,5 +55,5 @@ if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && m
 
 mysqli_close($conn);
 
-header("Location: history.php");
+header("Location: history.html");
 ?>

@@ -20,7 +20,7 @@ $hash = $_POST["hash"];
 $directPlay = $_POST["directPlay"];
 $backField = $_POST["backField"];
 $oForm = $_POST["oForm"];
-$oPlay = $_POST["oPLay"];
+$oPlay = $_POST["oPlay"];
 $oStrength = $_POST["oStrength"];
 
 
@@ -53,6 +53,6 @@ if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && m
 }
 
 mysqli_close($conn);
-header("Location: index.html");
+//header("Location: index.html");
 
 ?>

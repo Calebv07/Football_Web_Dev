@@ -1,5 +1,5 @@
 <?php
-    $playID = $_POST['playIDEdit'];
+    $playID = 3;//$_POST['playIDEdit'];
     $dbserver = "localhost";
     $dbuser = "root";
     $dbpass = "DynoMonitorFoodPan374$&%";
@@ -10,10 +10,10 @@
         die("Connection Broken: " . mysqli_connect_error());
     }
 
-    $sqlfieldD = "SELECT playID, playType, hash, backField, directPlay, oForm, oPlay, oStrength FROM fieldData";
-    $sqlgameD = "SELECT playID, result, gainLoss, ODK, yardLine, down, distance FROM gameData";
-    $sqlgameI = "SELECT playID, oppName, homeName, date FROM gameInfo";
-    $sqlplay = "SELECT playID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo FROM play";
+    $sqlfieldD = "SELECT playID, playType, hash, backField, directPlay, oForm, oPlay, oStrength FROM fieldData WHERE playID = '$playID'";
+    $sqlgameD = "SELECT playID, result, gainLoss, ODK, yardLine, down, distance FROM gameData WHERE playID = '$playID'";
+    $sqlgameI = "SELECT playID, oppName, homeName, date FROM gameInfo WHERE playID = '$playID'";
+    $sqlplay = "SELECT playID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo FROM play WHERE playID = '$playID'";
 
     $resultFieldD = mysqli_query($conn, $sqlfieldD);
     $resultGameD = mysqli_query($conn, $sqlgameD);
@@ -21,6 +21,11 @@
     $resultPlay = mysqli_query($conn, $sqlplay);
 
     if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
+        $table0 = mysqli_fetch_assoc($resultGameI);
+        $table1 = mysqli_fetch_assoc($resultFieldD);
+        $table2 = mysqli_fetch_assoc($resultGameD);
+        $table3 = mysqli_fetch_assoc($resultPlay);
+        
         echo "<!DOCTYPE html>
         <html lang=\"en\">
             <head>
@@ -38,7 +43,8 @@
                     <span class=\"dot3\"></span>
                     <span class=\"dot4\"></span>
                 </div>
-                <form action=\"upload.php\" method=\"post\">
+                <form action=\"update.php\" method=\"post\">
+                    <input name=\"playIDEdit\" type=\"hidden\" value=\"". $table0['playID'] . "\">
                     <aside class=\"quickView\">
                         <div>
                             <input name=\"playNum\" type=\"text\" placeholder=\"Play Number\">
@@ -50,13 +56,8 @@
                         <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
                         
                        <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
-                    
-                        <div class=\"historyButton\">
-                            <a href=\"./history.php\"><img src=\"/assets/navIcon/historyIcon.svg\" alt=\"View History\" height=\"40px\"> </a>
-                            
-                        </div>
                         <div class=\"submitButton\">
-                            <input type=\"submit\" class=\"submitButton\" value=\"        SUBMIT\"></input>
+                            <input type=\"submit\" class=\"submitButton\" value=\"        EDIT\"></input>
                         </div>
                     </header>
                     <main>
@@ -79,6 +80,7 @@
                                     <input name=\"returner\" type=\"number\" value=\"" . $table3['passer'] . "\">
                                   </div>
                                   <div>
+                                    <h2>Rusher</h2>
                                     <input name=\"rusher\" type=\"number\" value=\"" . $table3['receiver'] . "\">
                                   </div>
                                 </div>
