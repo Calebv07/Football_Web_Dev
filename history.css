@@ -74,11 +74,11 @@ header h3 {
     margin-left: 2%;
     margin-right: 2%;
     width: 96%;
-    background: #7f7f79b3;
+    background: #5b5b58b3;
     height: 30px;
     border-radius: 20px;
 }
-.flexBox {
+.col {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -87,19 +87,24 @@ header h3 {
     color: white;
     font-family: "BebasNeue";
     margin-top: 2%;
-    font-size: 1.5m;
-    letter-spacing: .06em;
+    font-size: 1.2em;
+    letter-spacing: .1em;
     border-radius: 20px;
 }
 td {
     color: white;
     font-family: "Rockwell";
-    font-size: 1.5em;
-    letter-spacing: .06em;
+    font-size: 1.2em;
+    letter-spacing: .1em;
     text-align: center;
 }
 .hide {
     display: none;
+}
+.line {
+    width: 1000px;
+    height: 5px;
+    color: white;
 }
 
 
