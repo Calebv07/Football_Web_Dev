@@ -17,8 +17,7 @@
     $resultGameD = mysqli_query($conn, $sqlgameD);
     $resultGameI = mysqli_query($conn, $sqlgameI);
 
-    if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0) {
-        echo "<!DOCTYPE html>
+    echo "<!DOCTYPE html>
         <html lang=\"en\">
             <head>
                 <title>Play History</title>
@@ -57,7 +56,7 @@
                         </tr>
                     </table>
                     <table class=\"container animateTable\">";
-
+    if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0) {
         while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD))) {
             echo "
                 <tr class=\"col\">
@@ -80,7 +79,14 @@
                 </body>
             </html>";
     } else {
-        die;
+        echo "          <tr class=\"col\"> 
+                            <td>" . mysqli_error($conn) . "</td
+                        </tr>  
+                        </table>
+                    </main>
+                    
+                </body>
+            </html>";
     }
 
     mysqli_close($conn);
