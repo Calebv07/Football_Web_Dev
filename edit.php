@@ -37,6 +37,44 @@
                     .fade {
                         animation: onLoadFadeEdit 1s forwards !important;
                     }
+                    .cancelButton {
+                        position: absolute;
+                        top: 39%;
+                        right: 15%;
+                    }
+                    .cancelButton {
+                        height: 50px;
+                        width: 200px;
+                        box-shadow: 0 6px #8a3f38;
+                        background-color: #E66B61;
+                        border-radius: 5px; 
+                        transition: 200ms;
+                    }
+                    a {
+                        text-decoration: none;
+                    }
+                    .cancelButtonText {
+                        top: 0%;
+                        color: white;
+                        font-family: "Rockwell";
+                        font-size: 1.5em;
+                        text-align: center;
+                        text-decoration: none;
+                        position: relative;
+                        top: 10px;
+                    }
+                    .cancelButton:hover {
+                        background-color: #e17c73;
+                        box-shadow: 0 10px #8a3f38;
+                        transform: translateY(-4px);
+                        transition: 200ms;
+                    }
+                    .cancelButton:active {
+                        background-color: #a34037;
+                        box-shadow: 0 2px #8a3f38 !important;
+                        transform: translateY(4px);
+                        transition: 100ms;
+                    }
                 </style>
             </head>
             <body>
@@ -61,6 +99,9 @@
                         <input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\">
                         
                        <input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\">
+                       <div class=\"cancelButton\">
+                            <a href=\"./history.php\"><div class=\"cancelButtonText\">CANCEL</div></a>
+                        </div>
                         <div class=\"submitButton\">
                             <input type=\"submit\" class=\"submitButton\" value=\"        EDIT\"></input>
                         </div>
