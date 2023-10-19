@@ -53,6 +53,6 @@ if (mysqli_query($conn, $queryPlay) && mysqli_query($conn, $queryFieldData) && m
 }
 
 mysqli_close($conn);
-//header("Location: index.html");
+header("Location: index.html");
 
 ?>
