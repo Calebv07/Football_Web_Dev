@@ -60,8 +60,9 @@ header {
     margin: 0% 0% 0% 2%;
     color: white;
     font-family: "BebasNeue";
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1em;
+    animation: onLoadHeader 1s forwards;
 }
 header h3 {
     margin: 0;
@@ -70,9 +71,7 @@ header h3 {
 }
 .container {
     padding: 10px;
-    margin-top: 10px;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 10px 2% 10px 2%;
     width: 96%;
     background: #5b5b58b3;
     height: 30px;
@@ -82,29 +81,130 @@ header h3 {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    align-items: center;
 }
 .tableHeader {
     color: white;
     font-family: "BebasNeue";
     margin-top: 2%;
-    font-size: 1.2em;
+    font-size: 1.4em;
     letter-spacing: .1em;
     border-radius: 20px;
+    animation: onLoad 1s forwards;
+}
+.animateTable {
+    margin: 1% 2% 3% 2%;
+    animation: onLoad 1.4s forwards;
 }
 td {
     color: white;
     font-family: "Rockwell";
-    font-size: 1.2em;
+    font-size: 1.4em;
     letter-spacing: .1em;
     text-align: center;
 }
-.hide {
-    display: none;
+
+.currentPlay {
+    position: absolute;
+    top: 20%;
+    right: 2%;
 }
-.line {
-    width: 1000px;
-    height: 5px;
+.currentPlay {
+    height: 50px;
+    width: 320px;
+    box-shadow: 0 6px #1b5c34;
+    background-color: #2fa45c;
+    border-radius: 5px; 
+    transition: 200ms;
+}
+a {
+    text-decoration: none;
+}
+.currentPlayText {
+    top: 0%;
     color: white;
+    font-family: "Rockwell";
+    font-size: .8em;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    top: -53px;
+    left: 20px;
+}
+.currentPlay img {
+    padding: 5px;
+}
+.currentPlay:hover {
+    background-color: #52a773;
+    box-shadow: 0 10px #1b5c34;
+    transform: translateY(-4px);
+    transition: 200ms;
+}
+.currentPlay:active {
+    background-color: #196737;
+    box-shadow: 0 2px #1b5c34 !important;
+    transform: translateY(4px);
+    transition: 100ms;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+}
+.editButton input{
+    background: url('assets/navIcon/editIcon.svg') no-repeat top 5px left 5px;
+    background-size: 30px;
+    box-shadow: 0 4px #26405a;
+    background-color: #365C81;
+    border: 0;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 1.5em;
+    text-align: center;
+    transition: 200ms;
+}
+.editButton input:hover {
+    background-color: #546e89;
+    box-shadow: 0 6px #26405a;
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+.editButton input:active {
+    background-color: #24415f;
+    box-shadow: 0 0px #26405a !important;
+    transform: translateY(2px);
+    transition: 100ms;
+}
+.deleteButton input{
+    background: url('assets/navIcon/deleteIcon.svg') no-repeat top 5px left 5px;
+    background-size: 30px;
+    box-shadow: 0 4px #8a3f38;
+    background-color: #E66B61;
+    border: 0;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-family: "Rockwell";
+    font-size: 1.5em;
+    text-align: center;
+    transition: 200ms;
+}
+.deleteButton input:hover {
+    background-color: #e17c73;
+    box-shadow: 0 6px #8a3f38;
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+.deleteButton input:active {
+    background-color: #a34037;
+    box-shadow: 0 0px #8a3f38 !important;
+    transform: translateY(2px);
+    transition: 100ms;
 }
 
 

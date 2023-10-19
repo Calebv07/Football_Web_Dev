@@ -1,5 +1,5 @@
 <?php
-    $playID = 3;//$_POST['playIDEdit'];
+    $playID = $_POST['playIDEdit'];
     $dbserver = "localhost";
     $dbuser = "root";
     $dbpass = "DynoMonitorFoodPan374$&%";

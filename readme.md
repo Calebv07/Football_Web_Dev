@@ -1,5 +1,5 @@
 # Welcome to the Football Web Development Repository
-### Created by: Caleb V., Lauren W., Melony N., & Mason L.
+#### Created by: Caleb, Lauren, Melony, & Mason
 ## Introduction
 This repository contains all the code for the Football Analysis Application. This serves as both a learning project for Web Development and experience in PHP/server-side execution. This project is under the MIT License.
 
@@ -11,6 +11,6 @@ If you would like to review on PHP, see our Test Review document here:
 
 ## Current TODO
 Last updated 10/18/2023
-- [ ] Complete play history table with functionality
+- [*] Complete play history table with functionality
 - [ ] Bring things together with animations and CSS styles
 - [ ] Start work on analysis and game calculations

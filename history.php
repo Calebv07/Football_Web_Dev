@@ -12,89 +12,72 @@
     $sqlfieldD = "SELECT playID, playType, hash, backField, directPlay, oForm, oPlay, oStrength FROM fieldData";
     $sqlgameD = "SELECT playID, result, gainLoss, ODK, yardLine, down, distance FROM gameData";
     $sqlgameI = "SELECT playID, oppName, homeName, date FROM gameInfo";
-    $sqlplay = "SELECT playID, passer, receiver, rusher, returner, tacklerOne, tacklerTwo FROM play";
 
     $resultFieldD = mysqli_query($conn, $sqlfieldD);
     $resultGameD = mysqli_query($conn, $sqlgameD);
     $resultGameI = mysqli_query($conn, $sqlgameI);
-    $resultPlay = mysqli_query($conn, $sqlplay);
 
-    if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
+    if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0) {
         echo "<!DOCTYPE html>
-            <html lang=\"en\">
+        <html lang=\"en\">
             <head>
-                <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+                <title>Play History</title>
+                <meta charset=\"utf-8\">
+                <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+                <link rel=stylesheet href=history.css>
             </head>
             <body>
-                <table>
-                <tr>
-                    <th>Play ID</th>
-                    <th>Opponent Name</th>
-                    <th>Home Name</th>
-                    <th>Date</th>
-                    <th>Play Type</th>
-                    <th>Hash</th>
-                    <th>Direction of Play</th>
-                    <th>Back Field</th>
-                    <th>Offensive Formation</th>
-                    <th>Offensive Play</th>
-                    <th>Offensive Strength</th>
-                    <th>Result</th>
-                    <th>Gain/Loss</th>
-                    <th>ODK</th>
-                    <th>Yard Line</th>
-                    <th>Down</th>
-                    <th>Distance</th>
-                    <th>Passer</th>
-                    <th>Receiver</th>
-                    <th>Rusher</th>
-                    <th>Returner</th>
-                    <th>Tackler One</th>
-                    <th>Tackler Two</th>
-                <tr>";
+                <span class=\"fade\"></span>
+                <div class=\"background\">
+                    <span class=\"filter\"></span>
+                    <span class=\"dot1\"></span>
+                    <span class=\"dot2\"></span>
+                    <span class=\"dot3\"></span>
+                    <span class=\"dot4\"></span>
+                </div>
+                <header>
+                    <div class=\"currentPlay\">
+                        <a href=\"./index.html\"><img src=\"/assets/navIcon/recordIcon.svg\" alt=\"View History\" height=\"40px\"><div class=\"currentPlayText\">CURRENT PLAY</div></a>
+                    </div>
+                    <h1>Play History</h1>
+                    <h3>List of previously recorded plays</h3>
+                </header>
+                <main>
+                    <table class=\"container tableHeader\">
+                        <tr class=\"col\"> 
+                            <th>Play ID</th>
+                            <th>Opponent</th>
+                            <th>Result</th>
+                            <th>Gain/Loss</th>
+                            <th>ODK</th>
+                            <th>Yard Line</th>
+                            <th>Down</th>
+                            <th>Distance</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                    <table class=\"container animateTable\">";
 
-        while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD)) && null !== ($table3 = mysqli_fetch_assoc($resultPlay))) {
-            echo "<tr><form id=\"playDataForm\" action=\"update.php\" method=\"POST\">
-                    <input name=\"playID\" type=\"hidden\" value=\"". $table0['playID'] . "\">
+        while(null !== ($table0 = mysqli_fetch_assoc($resultGameI)) && null !== ($table1 = mysqli_fetch_assoc($resultFieldD)) && null !== ($table2 = mysqli_fetch_assoc($resultGameD))) {
+            echo "
+                <tr class=\"col\">
                     <td>". $table0['playID'] . "</td>
-                    <td><input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\"></td>
-                    <td><input name=\"homeName\" type=\"text\" value=\"" . $table0['homeName'] . "\"></td>
-                    <td><input name=\"date\" type=\"date\" value=\"" . $table0['date'] . "\"></td>
-                    <td><select name=\"playType\"><option value=\"R\"" . (($table1['playType'] == "R" ) ? 'selected="selected"':"") . ">Run</option><option value=\"P\" " . (($table1['playType'] == "P" ) ? 'selected="selected"':"") . ">Pass</option></select></td>
-                    <td><select name=\"hash\"><option value=\"L\" " . (($table1['hash'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['hash'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['hash'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select></td>
-                    <td><select name=\"directPlay\"><option value=\"L\" " . (($table1['directPlay'] == "L" ) ? 'selected="selected"':"") . ">Left</option><option value=\"M\" " . (($table1['directPlay'] == "M" ) ? 'selected="selected"':"") . ">Middle</option><option value=\"R\" " . (($table1['directPlay'] == "R" ) ? 'selected="selected"':"") . ">Right</option></select></td>
-                    <td><input name=\"backField\" type=\"text\" value=\"" . $table1['backField'] . "\"></td>
-                    <td><input name=\"oForm\" type=\"text\" value=\"" . $table1['oForm'] . "\"></td>
-                    <td><input name=\"oPlay\" type=\"text\" value=\"" . $table1['oPlay'] . "\"></td>
-                    <td><input name=\"oStrength\" type=\"number\" value=\"" . $table1['oStrength'] . "\"></td>
-                    <td><input name=\"result\" type=\"text\" value=\"" . $table2['result'] . "\"></td>
-                    <td><input name=\"gainLoss\" type=\"text\" value=\"" . $table2['gainLoss'] . "\"></td>
-                    <td><select name=\"odk\" placeholder=\"ODK\"><option value=\"O\" " . (($table2['ODK'] == "O" ) ? 'selected="selected"':"") . ">Offensive</option><option value=\"D\" " . (($table2['ODK'] == "D" ) ? 'selected="selected"':"") . ">Defensive</option><option value=\"K\" " . (($table2['ODK'] == "K" ) ? 'selected="selected"':"") . ">Kicking</option></select></td>
-                    <td><input name=\"yardLine\" type=\"number\" value=\"" . $table2['yardLine'] . "\"></td>
-                    <td><select name=\"down\"><option value=\"1\" " . (($table2['down'] == "1" ) ? 'selected="selected"':"") . ">First</option><option value=\"2\" " . (($table2['down'] == "2" ) ? 'selected="selected"':"") . ">Second</option><option value=\"3\" " . (($table2['down'] == "3" ) ? 'selected="selected"':"") . ">Third</option><option value=\"4\" " . (($table2['down'] == "4" ) ? 'selected="selected"':"") . ">Fourth</option></select></td>
-                    <td><input name=\"distance\" type=\"number\" value=\"" . $table2['distance'] . "\"></td>
-                    <td><input name=\"returner\" type=\"number\" value=\"" . $table3['passer'] . "\"></td>
-                    <td><input name=\"rusher\" type=\"number\" value=\"" . $table3['receiver'] . "\"></td>
-                    <td><input name=\"passer\" type=\"number\" value=\"" . $table3['rusher'] . "\"></td>
-                    <td><input name=\"receiver\" type=\"number\" value=\"" . $table3['returner'] . "\"></td>
-                    <td><input name=\"tacklerOne\" type=\"number\" value=\"" . $table3['tacklerOne'] . "\"></td>
-                    <td><input name=\"tacklerTwo\" type=\"number\" value=\"" . $table3['tacklerTwo'] . "\"></td>
-                    <td><input type=submit></form></td><form action=\"deletePlay.php\" method=\"POST\">
-                    <td><input type=submit value=\"Delete\"></form></td>
-                </tr>";
+                    <td>" . $table0['oppName'] . "</td>
+                    <td>" . $table2['result'] . "</td>
+                    <td>" . $table2['gainLoss'] . "</td>
+                    <td>" . $table2['ODK'] . "</td>
+                    <td>" . $table2['yardLine'] . "</td>
+                    <td>" . $table2['down'] . "</td>
+                    <td>" . $table2['distance'] . "</td>
+                    <td class=\"actionButtons\"><form action=\"edit.php\" method=\"POST\"><div class=\"editButton\"><input name=\"playID\" type=\"hidden\" value=\"". $table0['playIDEdit'] . "\"><input type=\"submit\" class=\"editButton\" value=\"\"></div></form><form action=\"delete_play.php\" method=\"POST\"><div class=\"deleteButton\"><input name=\"playID\" type=\"hidden\" value=\"". $table0['playIDDelete'] . "\"><input type=\"submit\" class=\"deleteButton\" value=\"\"></div></form></td>
+                </tr>
+                <tr><td><hr></td></tr>
+                ";
         }
-        echo "</table>
-            <br>
-            <button id=\"submitAll\">Submit All Data</button><form action=\"deleteAll.php\" method=\"POST\"><input type=submit value=\"DELETE ALL DATA\"></form>
-            <script>
-                $('#submitAll').click(function() {
-                    // Select all the forms within the body
-                    $('form#playDataForm').each(function() {
-                        $(this).submit();
-                    });
-                });
-            </script>
-            </body>
+        echo "            </table>
+                    </main>
+                    
+                </body>
             </html>";
     } else {
         die;
