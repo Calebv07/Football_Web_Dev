@@ -80,7 +80,7 @@
             </html>";
     } else {
         echo "          <tr class=\"col\"> 
-                            <td>" . mysqli_error($conn) . "</td
+                            <td>" . ((mysqli_error($conn) == '' ) ? "Nothing to show here. Try submitting a Play Record.":"mysqli_error($conn)") . "</td
                         </tr>  
                         </table>
                     </main>
