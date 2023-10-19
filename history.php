@@ -69,7 +69,7 @@
                     <td>" . $table2['yardLine'] . "</td>
                     <td>" . $table2['down'] . "</td>
                     <td>" . $table2['distance'] . "</td>
-                    <td class=\"actionButtons\"><form action=\"edit.php\" method=\"POST\"><div class=\"editButton\"><input name=\"playID\" type=\"hidden\" value=\"". $table0['playIDEdit'] . "\"><input type=\"submit\" class=\"editButton\" value=\"\"></div></form><form action=\"delete_play.php\" method=\"POST\"><div class=\"deleteButton\"><input name=\"playID\" type=\"hidden\" value=\"". $table0['playIDDelete'] . "\"><input type=\"submit\" class=\"deleteButton\" value=\"\"></div></form></td>
+                    <td class=\"actionButtons\"><form action=\"edit.php\" method=\"post\"><div class=\"editButton\"><input name=\"playIDEdit\" type=\"hidden\" value=\"". $table0['playID'] . "\"><input type=\"submit\" class=\"editButton\" value=\"\"></div></form><form action=\"delete_play.php\" method=\"post\"><div class=\"deleteButton\"><input name=\"playIDDelete\" type=\"hidden\" value=\"". $table0['playID'] . "\"><input type=\"submit\" class=\"deleteButton\" value=\"\"></div></form></td>
                 </tr>
                 <tr><td><hr></td></tr>
                 ";

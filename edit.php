@@ -19,7 +19,7 @@
     $resultGameD = mysqli_query($conn, $sqlgameD);
     $resultGameI = mysqli_query($conn, $sqlgameI);
     $resultPlay = mysqli_query($conn, $sqlplay);
-
+    
     if(mysqli_num_rows($resultFieldD)>0 && mysqli_num_rows($resultGameD)>0 && mysqli_num_rows($resultGameI)>0 && mysqli_num_rows($resultPlay)>0) {
         $table0 = mysqli_fetch_assoc($resultGameI);
         $table1 = mysqli_fetch_assoc($resultFieldD);
