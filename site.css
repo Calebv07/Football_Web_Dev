@@ -2,6 +2,10 @@
   font-family: Rockwell;
   src: url(/assets/fonts/ROCK.TTF);
 }
+@font-face {
+  font-family: BebasNeue;
+  src: url(/assets/fonts/BebasNeue-Regular.ttf);
+}
 ::placeholder {
   text-align: center; 
 }
@@ -40,7 +44,7 @@ body {
     url(https://grainy-gradients.vercel.app/noise.svg);
 }
 .fade {
-  position: relative;
+  position: fixed;
   pointer-events: none;
   top: 0;
   left: 0;
@@ -48,7 +52,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100%;
-  z-index: 10;
+  z-index: 5;
   animation: onLoadFade 1s forwards;
 }
 
@@ -81,6 +85,30 @@ input:focus, select:focus{
 
 .quickView {
   display: none;
+}
+.quickViewEdit {
+  z-index: 10;
+  position: sticky;
+  top: 2%;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  padding: .5px 20px .5px 20px;
+  width: 350px;
+  background: #e66c6198;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.3em;
+  font-family: "BebasNeue";
+  letter-spacing: .06em;
+  text-align: center;
+  line-height: 2em;
+  pointer-events: none;
+}
+.quickViewEditplay {
+  color: #ffffff;
+  font-size: 2em;
 }
 header {
   z-index: 0;
@@ -321,5 +349,5 @@ header {
 @keyframes onLoadFadeEdit {
   0% {background-color: #272121;}
   20% {background-color: #272121;}
-  100% {background-color: #27212165;}
+  100% {background-color: #21121227;}
 }

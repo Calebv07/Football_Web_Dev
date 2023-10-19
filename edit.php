@@ -88,10 +88,8 @@
                 </div>
                 <form action=\"update.php\" method=\"post\">
                     <input name=\"playIDEdit\" type=\"hidden\" value=\"". $table0['playID'] . "\">
-                    <aside class=\"quickView\">
-                        <div>
-                            <input name=\"playNum\" type=\"text\" placeholder=\"Play Number\">
-                        </div>
+                    <aside class=\"quickViewEdit\">
+                        <h3>You are currently editing Play #<div class=\"quickViewEditplay\">". $table0['playID'] . "</div></h3>
                     </aside>
                     <header class=\"header\">
                         <input name=\"oppName\" type=\"text\" value=\"" . $table0['oppName'] . "\">
