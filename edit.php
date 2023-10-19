@@ -56,7 +56,7 @@
                     .cancelButtonText {
                         top: 0%;
                         color: white;
-                        font-family: "Rockwell";
+                        font-family: \"Rockwell\";
                         font-size: 1.5em;
                         text-align: center;
                         text-decoration: none;
