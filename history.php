@@ -40,7 +40,7 @@
                         <h3>List of previously recorded plays</h3>
                     </div>
                     <div>
-                        <button class=\"currentPlay\" type=\"submit\" formaction=\"index.html\" ><img src=\"/assets/navIcon/recordIcon.svg\" alt=\"Record Icon\" height=\"40px\"><span class=\"currentPlayText\">CURRENT PLAY</span></button>
+                        <button class=\"currentPlay\" type=\"submit\" onclick=\"location.href='index.html';\"><img src=\"/assets/navIcon/recordIcon.svg\" alt=\"Record Icon\" height=\"40px\"><span class=\"currentPlayText\">CURRENT PLAY</span></button>
                     </div>
                 </header>
                 <main>
