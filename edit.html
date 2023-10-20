@@ -6,34 +6,26 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="site.css">
                 <style>
+                    .submitButton input{
+                        background: url('assets/navIcon/editIcon.svg') no-repeat top 7.5px left 30px;
+                        background-size: 35px;
+                        background-color: #2fa45c;
+                    }
                     .fade {
                         animation: onLoadFadeEdit 1s forwards !important;
                     }
                     .cancelButton {
-                        position: absolute;
-                        top: 39%;
-                        right: 15%;
-                    }
-                    .cancelButton {
                         height: 50px;
-                        width: 200px;
+                        width: 180px !important;
                         box-shadow: 0 6px #8a3f38;
                         background-color: #E66B61;
+                        border: 0;
                         border-radius: 5px; 
-                        transition: 200ms;
-                    }
-                    a {
-                        text-decoration: none;
-                    }
-                    .cancelButtonText {
-                        top: 0%;
                         color: white;
                         font-family: "Rockwell";
-                        font-size: 1.5em;
+                        font-size: 1.3em;
                         text-align: center;
-                        text-decoration: none;
-                        position: relative;
-                        top: 10px;
+                        transition: 200ms;
                     }
                     .cancelButton:hover {
                         background-color: #e17c73;
@@ -66,11 +58,11 @@
                         <input name="oppName" type="text" placeholder="Enter Oppenent Name"></input>
                         <input name="homeName" type="text" placeholder="Home"></input>
                         <input name="date" type="date" class="dateInput"></input>
-                        <div class="cancelButton">
-                            <a href="./index.html"><div class="cancelButtonText">CANCEL</div></a>
+                        <div>
+                            <button class="cancelButton" type="submit" formaction="history.php" ><span class="cancelButtonText">CANCEL</span></button>
                         </div>
                         <div class="submitButton">
-                            <input type="submit" class="submitButton" value="        SUBMIT"></input>
+                            <input type="submit" class="submitButton" value="        EDIT"></input>
                         </div>
                     </header>
                     <main>
