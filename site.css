@@ -107,6 +107,7 @@ input:focus, select:focus{
   text-align: center;
   line-height: 2em;
   pointer-events: none;
+  animation: onLoadHeader 1.6s forwards;
 }
 .quickViewEditplay {
   color: #ffffff;
@@ -127,6 +128,7 @@ header {
   height: 45px;
   border-radius: 5px;
   margin-bottom: 10px;
+  font-size: 1.5em;
 }
 .dateInput {
   box-shadow: 0 0 !important;
@@ -167,6 +169,7 @@ header {
 .historyButton {
   height: 50px;
   width: 180px;
+  margin-bottom: 6%;
   box-shadow: 0 6px #26405a;
   background-color: #365C81;
   border: 0;
@@ -221,7 +224,7 @@ header {
 .fieldAndPlayer {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   animation: onLoad 1.4s forwards;
 }
 .field {
@@ -234,23 +237,25 @@ header {
   max-width: 1200px;
 }
 .player {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 1em;
-  flex-shrink: 1;
-  margin-left: 1.5%;
+  align-items: center;
+  margin: 2% 2% 0% 0%;
+  padding: 0 0 3% 0;
 }
 .playerSection {
-  width: 100%;
   text-align: center;
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 8% 0 3% 0;
+  padding: 0 0 10% 0;
 }
 .player input {
-  width: 60%;
+  width: 40%;
   height: 70% !important;
   margin: 2%;
   border-radius: 5px;
+  font-size: 1.5em;
   font-family: "Rockwell";
   color: red;
 }
